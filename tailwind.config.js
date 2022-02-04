@@ -5,7 +5,13 @@ module.exports = {
     './packages/takeoffdesigngroup/cms/resources/views/**/*.blade.php',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        blue: {
+          500: '#004261',
+        }
+      },
+    },
   },
   plugins: [],
 }

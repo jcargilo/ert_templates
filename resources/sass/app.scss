@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+nav li.has-submenu:hover nav::before {
+    border-bottom: 10px solid theme('colors.blue.500');
+    border-bottom: 10px solid theme('colors.blue.500');
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    content: "";
+    display: inline-block;
+    height: 0;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+}

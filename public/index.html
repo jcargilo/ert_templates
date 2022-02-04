@@ -25,92 +25,92 @@
     -->
     <div class="hidden px-6 py-4 absolute top-0 left-0 bg-gray-100 w-full z-50">
         <!-- Mobile menu button-->
-            <div class="text-right">
-                <button type="button"
-                    class="inline-flex items-center justify-center py-1 px-2 rounded-md text-2xl text-[#004261] hover:text-[#195f80] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#195f80]"
-                    aria-controls="mobile-menu" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-        <!--
+        <div class="text-right">
+            <button type="button"
+                class="inline-flex items-center justify-center py-1 px-2 rounded-md text-2xl text-[#004261] hover:text-[#195f80] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#195f80]"
+                aria-controls="mobile-menu" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <!--
         Icon when menu is closed.
         Menu open: "hidden", Menu closed: "block"
         -->
-                    <svg class="hidden h-6 w-6" aria-hidden="true" focusable="false" data-prefix="far"
-                        data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
-                        class="svg-inline--fa fa-bars fa-w-14 fa-3x">
-                        <path fill="currentColor"
-                            d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"
-                            class=""></path>
-                    </svg>
-        <!--
+                <svg class="hidden h-6 w-6" aria-hidden="true" focusable="false" data-prefix="far" data-icon="bars"
+                    role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                    class="svg-inline--fa fa-bars fa-w-14 fa-3x">
+                    <path fill="currentColor"
+                        d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"
+                        class=""></path>
+                </svg>
+                <!--
         Icon when menu is open.
         Menu open: "block", Menu closed: "hidden"
         -->
-                    <svg class="w-6 h-6" aria-hidden="true" focusable="false" data-prefix="far" data-icon="times"
-                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
-                        class="svg-inline--fa fa-times fa-w-10 fa-3x">
-                        <path fill="currentColor"
-                            d="M207.6 256l107.72-107.72c6.23-6.23 6.23-16.34 0-22.58l-25.03-25.03c-6.23-6.23-16.34-6.23-22.58 0L160 208.4 52.28 100.68c-6.23-6.23-16.34-6.23-22.58 0L4.68 125.7c-6.23 6.23-6.23 16.34 0 22.58L112.4 256 4.68 363.72c-6.23 6.23-6.23 16.34 0 22.58l25.03 25.03c6.23 6.23 16.34 6.23 22.58 0L160 303.6l107.72 107.72c6.23 6.23 16.34 6.23 22.58 0l25.03-25.03c6.23-6.23 6.23-16.34 0-22.58L207.6 256z"
-                            class=""></path>
-                    </svg>
-                </button>
-            </div>
+                <svg class="w-6 h-6" aria-hidden="true" focusable="false" data-prefix="far" data-icon="times" role="img"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+                    class="svg-inline--fa fa-times fa-w-10 fa-3x">
+                    <path fill="currentColor"
+                        d="M207.6 256l107.72-107.72c6.23-6.23 6.23-16.34 0-22.58l-25.03-25.03c-6.23-6.23-16.34-6.23-22.58 0L160 208.4 52.28 100.68c-6.23-6.23-16.34-6.23-22.58 0L4.68 125.7c-6.23 6.23-6.23 16.34 0 22.58L112.4 256 4.68 363.72c-6.23 6.23-6.23 16.34 0 22.58l25.03 25.03c6.23 6.23 16.34 6.23 22.58 0L160 303.6l107.72 107.72c6.23 6.23 16.34 6.23 22.58 0l25.03-25.03c6.23-6.23 6.23-16.34 0-22.58L207.6 256z"
+                        class=""></path>
+                </svg>
+            </button>
+        </div>
         <!--Menu items-->
-            <div class="w-full h-screen pt-8">
-                <div class="grid grid-rows-auto gap-8 text-[18px]">
-                    <div class="px-4">
-                        <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
-                            href="#">
-                            <span>Accounting</span></a>
-                    </div>
-                    <div class="px-4">
-                        <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
-                            href="#">
-                            <span>VFO Services</span> <i class="far fa-angle-down"></i></a>
-        <!--
+        <div class="w-full h-screen pt-8">
+            <div class="grid grid-rows-auto gap-8 text-[18px]">
+                <div class="px-4">
+                    <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
+                        href="#">
+                        <span>Accounting</span></a>
+                </div>
+                <div class="px-4">
+                    <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
+                        href="#">
+                        <span>VFO Services</span> <i class="far fa-angle-down"></i></a>
+                    <!--
             Sub nav when open.
             Sub nav open:"block", sub nav closed: "hidden"
         -->
-                            <div class="ml-4 bg-gray-200 grid grid-rows-auto gap-4 mt-4 p-4">
-                                <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
-                                href="#">
-                                <span>Tax Planning</span></a>
-                                <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
-                                href="#">
-                                <span>Wealth Management</span></a>
-                                <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
-                                href="#">
-                                <span>Legal</span></a>
-                                <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
-                                href="#">
-                                <span>Risk Mitigation</span></a>
-                                <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
-                                href="#">
-                                <span>Business Advisory</span></a>
-                            </div>  
-        <!--/sub menu-->      
-                    </div>
-                    <div class="px-4">
+                    <div class="ml-4 bg-gray-200 grid grid-rows-auto gap-4 mt-4 p-4">
                         <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
                             href="#">
-                            Planning Process</a>
-                    </div>
-                    <div class="px-4">
+                            <span>Tax Planning</span></a>
                         <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
                             href="#">
-                            Team</a>
-                    </div>
-                    <div class="px-4">
+                            <span>Wealth Management</span></a>
                         <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
                             href="#">
-                            Events</a>
-                    </div>
-                    <div class="px-4">
+                            <span>Legal</span></a>
                         <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
                             href="#">
-                            Contact</a>
+                            <span>Risk Mitigation</span></a>
+                        <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
+                            href="#">
+                            <span>Business Advisory</span></a>
                     </div>
+                    <!--/sub menu-->
+                </div>
+                <div class="px-4">
+                    <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
+                        href="#">
+                        Planning Process</a>
+                </div>
+                <div class="px-4">
+                    <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
+                        href="#">
+                        Team</a>
+                </div>
+                <div class="px-4">
+                    <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
+                        href="#">
+                        Events</a>
+                </div>
+                <div class="px-4">
+                    <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
+                        href="#">
+                        Contact</a>
                 </div>
             </div>
+        </div>
         <!--/Menu items-->
     </div>
     <!--/Mobile menu-->
@@ -118,15 +118,16 @@
     <div class="flex flex-col h-full">
         <div class="items-center px-6 py-4 bg-white lg:flex">
 
-                <div class="flex justify-between items-center md:block">
-                    <a href="/home"><img src="./images/logo.png" class="m-auto min-w-[250px] max-w-[300px] pb-0 md:pb-4 lg:pb-0"></a>
-                
-                <svg class="h-6 w-6 text-[#004261] hover:text-[#195f80] md:hidden" aria-hidden="true" focusable="false" data-prefix="far"
-                data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
-                class="svg-inline--fa fa-bars fa-w-14 fa-3x">
-                <path fill="currentColor"
-                    d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"
-                    class=""></path>
+            <div class="flex justify-between items-center md:block">
+                <a href="/home"><img src="./images/logo.png"
+                        class="m-auto min-w-[250px] max-w-[300px] pb-0 md:pb-4 lg:pb-0"></a>
+
+                <svg class="h-6 w-6 text-[#004261] hover:text-[#195f80] md:hidden" aria-hidden="true" focusable="false"
+                    data-prefix="far" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512" class="svg-inline--fa fa-bars fa-w-14 fa-3x">
+                    <path fill="currentColor"
+                        d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"
+                        class=""></path>
                 </svg></div>
 
             <div class="md:flex-1">
@@ -138,34 +139,36 @@
                     </li>
                     <li class="px-4">
                         <div class="flex-col">
-                        <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
-                            href="#">
-                         <div class="relative">
-                            <span class="mr-2">VFO Services</span><span class="far fa-angle-down"></span></a>
-                        <!--
+                            <a class="font-sans tracking-wider text-[#004261] hover:text-[#004261] decoration-2 hover:underline hover:underline-offset-8"
+                                href="#">
+                                <div class="relative">
+                                    <span class="mr-2">VFO Services</span><span class="far fa-angle-down"></span>
+                            </a>
+                            <!--
                             Sub nav when open.
                             Sub nav open:"block", sub nav closed: "hidden"
                         -->
-                                <div class="min-w-[200px] my-2 p-2 bg-[#004261] absolute right-1/2 left-1/2 transform -translate-x-1/2 text-white z-40">
-                                    <div class="grid grid-rows-auto gap-4 p-4">
-                                        <a class="font-sans tracking-wider hover:text-white decoration-2 hover:underline hover:underline-offset-8"
+                            <div
+                                class="min-w-[200px] my-2 p-2 bg-[#004261] absolute right-1/2 left-1/2 transform -translate-x-1/2 text-white z-40">
+                                <div class="grid grid-rows-auto gap-4 p-4">
+                                    <a class="font-sans tracking-wider hover:text-white decoration-2 hover:underline hover:underline-offset-8"
                                         href="#">
                                         <span>Tax Planning</span></a>
-                                        <a class="font-sans tracking-wider hover:text-white decoration-2 hover:underline hover:underline-offset-8"
+                                    <a class="font-sans tracking-wider hover:text-white decoration-2 hover:underline hover:underline-offset-8"
                                         href="#">
                                         <span>Wealth Management</span></a>
-                                        <a class="font-sans tracking-wider hover:text-white decoration-2 hover:underline hover:underline-offset-8"
+                                    <a class="font-sans tracking-wider hover:text-white decoration-2 hover:underline hover:underline-offset-8"
                                         href="#">
                                         <span>Legal</span></a>
-                                        <a class="font-sans tracking-wider hover:text-white decoration-2 hover:underline hover:underline-offset-8"
+                                    <a class="font-sans tracking-wider hover:text-white decoration-2 hover:underline hover:underline-offset-8"
                                         href="#">
                                         <span>Risk Mitigation</span></a>
-                                        <a class="font-sans tracking-wider hover:text-white decoration-2 hover:underline hover:underline-offset-8"
+                                    <a class="font-sans tracking-wider hover:text-white decoration-2 hover:underline hover:underline-offset-8"
                                         href="#">
                                         <span>Business Advisory</span></a>
-                                    </div> 
                                 </div>
-                        <!--/Sub nav-->
+                            </div>
+                            <!--/Sub nav-->
                         </div>
                     </li>
                     <li class="px-4">
@@ -200,14 +203,14 @@
                             <p class="mt-2 text-sm text-gray-500 md:text-base">Your Future-Focused, Proactive Partners
                             </p>
                             <div class="mt-6">
-                                <button class="px-4 py-3 bg-[#004261] text-white tracking-wider rounded hover:bg-[#195f80] hover:text-white active:bg-[#22617e]"
+                                <button
+                                    class="px-4 py-3 bg-[#004261] text-white tracking-wider rounded hover:bg-[#195f80] hover:text-white active:bg-[#22617e]"
                                     href="#">About Us</button>
                             </div>
                         </div>
                     </div>
                     <div class="w-1/2" style="clip-path:polygon(10% 0, 100% 0%, 100% 100%, 0 100%)">
-                        <div class="h-full bg-cover"
-                            style="background-image: url(./images/san-diego-landscape.jpg)">
+                        <div class="h-full bg-cover" style="background-image: url(./images/san-diego-landscape.jpg)">
                             <div class="h-full bg-black opacity-20"></div>
                         </div>
                     </div>
@@ -219,20 +222,25 @@
                     <div class="md:flex text-center md:space-x-4">
                         <div class="pb-10 md:pb-0 md:w-1/3">
                             <img src="./images/risk-mitigation.jpg" class="m-auto pb-4">
-                            <a href="#" class="text-xl font-semibold text-[#004261] underline hover:text-[#004261]">Accounting Services Team</a>
+                            <a href="#"
+                                class="text-xl font-semibold text-[#004261] underline hover:text-[#004261]">Accounting
+                                Services Team</a>
                         </div>
                         <div class="pb-10 md:pb-0 md:w-1/3">
                             <img src="./images/legal-services.jpg" class="m-auto pb-4">
-                            <a href="#" class="text-xl font-semibold text-[#004261] underline hover:text-[#004261]">Proactive Planning Team</a>
+                            <a href="#"
+                                class="text-xl font-semibold text-[#004261] underline hover:text-[#004261]">Proactive
+                                Planning Team</a>
                         </div>
                         <div class="pb-10 md:pb-0 md:w-1/3">
                             <img src="./images/business-advisory.jpg" class="m-auto pb-4">
-                            <a href="#" class="text-xl font-semibold text-[#004261] underline hover:text-[#004261]">Accounting Services Team</a>
+                            <a href="#"
+                                class="text-xl font-semibold text-[#004261] underline hover:text-[#004261]">Accounting
+                                Services Team</a>
                         </div>
                     </div>
                 </div>
-                <div class="w-full bg-cover"
-                    style="background-image: url(./images/san-diego-landscape.jpg)">
+                <div class="w-full bg-cover" style="background-image: url(./images/san-diego-landscape.jpg)">
                     <div class="h-full bg-black opacity-20"></div>
                 </div>
                 <div class="bg-fixed" style="background-image: url(./images/event-bg.jpg)">
@@ -240,11 +248,14 @@
                         <div class="pb-8 text-center">
                             <span class="text-2xl font-semibold text-white">Upcoming Events</span>
                         </div>
-                        <div class="w-2/3 m-auto"><a href="https://lindsay.oureliteexperience.com/MTPW0005" target="_blank"><img src="./images/maximizing-advanced-tax-planning.jpg"></a></div>
+                        <div class="w-2/3 m-auto"><a href="https://lindsay.oureliteexperience.com/MTPW0005"
+                                target="_blank"><img src="./images/maximizing-advanced-tax-planning.jpg"></a></div>
                     </div>
                 </div>
                 <div class="w-full m-auto px-6 pt-8 text-center md:w-3/4">
-                    <span class="text-lg font-semibold text-[#004261]">As an accounting firm with a Virtual Family Office, we combined the following five disciplines to provide the most proactive and holistic planning available to ensure our clients are maximizing their potential:</span>
+                    <span class="text-lg font-semibold text-[#004261]">As an accounting firm with a Virtual Family
+                        Office, we combined the following five disciplines to provide the most proactive and holistic
+                        planning available to ensure our clients are maximizing their potential:</span>
                     <div class="pt-4 justify-center text-lg text-left text-[#004261] md:flex">
                         <div class="pb-8 leading-loose md:w-1/4">
                             <ul>
@@ -255,8 +266,8 @@
                         </div>
                         <div class="md:w-1/4 leading-loose">
                             <ul>
-                        <li><i class="fas fa-check-circle"></i> Legal Services</li>
-                        <li><i class="fas fa-check-circle"></i> Business Advisory</li>
+                                <li><i class="fas fa-check-circle"></i> Legal Services</li>
+                                <li><i class="fas fa-check-circle"></i> Business Advisory</li>
                         </div>
                     </div>
                     <div class="py-8">
@@ -264,15 +275,27 @@
                     </div>
                     <div class="w-full m-auto space-y-4 text-lg text-[#004261] md:w-3/4">
                         <h2 class="text-2xl font-semibold">FORWARD FAMILY OFFICE</h2>
-                        <p class="text-xl">Combining <strong>Proactive Planning </strong>and the <strong>Virtual Family Office </strong>Experience.</p>
-                        <p>Over the years we have recognized that our best clients want <strong>PROACTIV</strong>E and <strong>HOLISTIC </strong>planning.</p>
+                        <p class="text-xl">Combining <strong>Proactive Planning </strong>and the <strong>Virtual Family
+                                Office </strong>Experience.</p>
+                        <p>Over the years we have recognized that our best clients want <strong>PROACTIV</strong>E and
+                            <strong>HOLISTIC </strong>planning.</p>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i> <strong>HOLISTIC</strong> describes the importance of taking the complete picture into account, when analyzing the individual variables</li>
-                            <li><i class="fas fa-check-circle"></i> <strong>PROACTIVE</strong> refers to creating or controlling an opportunity, rather than reacting to it after it has happened</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>HOLISTIC</strong> describes the importance
+                                of taking the complete picture into account, when analyzing the individual variables
+                            </li>
+                            <li><i class="fas fa-check-circle"></i> <strong>PROACTIVE</strong> refers to creating or
+                                controlling an opportunity, rather than reacting to it after it has happened</li>
                         </ul>
-                        <p>Unfortunately most professional do not work together to ensure that their individual expertise creates synergy with their clients' other professionals. Most CPAs, attorneys, financial advisors, insurance agents, business consultants, etc. all work reactively in their own <em>“silos”. </em>They rarely consider or discuss how their advice may impact the holistic planning needs of the client.</p>
-                        <p>Imagine how dangerous this same lack of <em>“joined-up thinking</em>” would be if medical professionals didn't communicate with each other similarly.</p>
-                        <p>That is why at<strong> Forward Accounting</strong> we have upgraded to a 21<sup>st</sup> century business model based around <strong>HOLISTIC </strong>and <strong>PROACTIVE</strong> advice.</p>
+                        <p>Unfortunately most professional do not work together to ensure that their individual
+                            expertise creates synergy with their clients' other professionals. Most CPAs, attorneys,
+                            financial advisors, insurance agents, business consultants, etc. all work reactively in
+                            their own <em>“silos”. </em>They rarely consider or discuss how their advice may impact the
+                            holistic planning needs of the client.</p>
+                        <p>Imagine how dangerous this same lack of <em>“joined-up thinking</em>” would be if medical
+                            professionals didn't communicate with each other similarly.</p>
+                        <p>That is why at<strong> Forward Accounting</strong> we have upgraded to a 21<sup>st</sup>
+                            century business model based around <strong>HOLISTIC </strong>and <strong>PROACTIVE</strong>
+                            advice.</p>
                     </div>
                 </div>
                 <div class="block w-3/4 m-auto px-6 py-8 md:justify-center md:space-x-12 md:flex">
@@ -289,10 +312,12 @@
                 <div class="bg-fixed" style="background-image: url(./images/building-bg.jpg)">
                     <div class="h-full text-center py-12 bg-black/40 md:py-24">
                         <div class="w-3/4 m-auto pb-8 text-center lg:w-1/2">
-                            <span class="text-4xl font-light text-white">Maximizing Our Clients' Potential Through Proactive & Holistic Planning</span>
+                            <span class="text-4xl font-light text-white">Maximizing Our Clients' Potential Through
+                                Proactive & Holistic Planning</span>
                         </div>
-                        <button class="px-4 py-3 bg-[#004261] text-white tracking-wider rounded hover:bg-[#195f80] hover:text-white active:bg-[#22617e]"
-                        href="#">contact us</button>
+                        <button
+                            class="px-4 py-3 bg-[#004261] text-white tracking-wider rounded hover:bg-[#195f80] hover:text-white active:bg-[#22617e]"
+                            href="#">contact us</button>
                     </div>
                 </div>
             </div>
@@ -332,10 +357,14 @@
                     </li>
                 </ul>
                 <ul class="flex flex-1 justify-center space-x-4 text-lg md:justify-end">
-                    <li><button type="button" class="text-[#004261] hover:text-[#195f80] active:text-[#22617e]"><i class="fab fa-facebook"></i></button></li>
-                    <li><button type="button" class="text-[#004261] hover:text-[#195f80] active:text-[#22617e]"><i class="fab fa-twitter"></i></button></li>
-                    <li><button type="button" class="text-[#004261] hover:text-[#195f80] active:text-[#22617e]"><i class="fab fa-instagram"></i></button></li>
-                    <li><button type="button" class="text-[#004261] hover:text-[#195f80] active:text-[#22617e]"><i class="fab fa-linkedin"></i></button></li>
+                    <li><button type="button" class="text-[#004261] hover:text-[#195f80] active:text-[#22617e]"><i
+                                class="fab fa-facebook"></i></button></li>
+                    <li><button type="button" class="text-[#004261] hover:text-[#195f80] active:text-[#22617e]"><i
+                                class="fab fa-twitter"></i></button></li>
+                    <li><button type="button" class="text-[#004261] hover:text-[#195f80] active:text-[#22617e]"><i
+                                class="fab fa-instagram"></i></button></li>
+                    <li><button type="button" class="text-[#004261] hover:text-[#195f80] active:text-[#22617e]"><i
+                                class="fab fa-linkedin"></i></button></li>
                 </ul>
             </div>
             <div class="p-4 font-sans text-xs text-[#004261]">

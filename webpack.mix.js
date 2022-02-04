@@ -4,6 +4,7 @@ require('laravel-mix-merge-manifest')
 
 mix
   .mergeManifest()
+  .js('resources/js/app.js', 'public/js')
   .sass('resources/sass/app.scss', 'public/css')
   .options({
     processCssUrls: false,

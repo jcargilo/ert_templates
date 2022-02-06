@@ -8057,7 +8057,7 @@ h6 .label {
     background-position: -78px -28px
 }
 .modal {
-    z-index: 1290;
+    z-index: 1299;
     outline: 0
 }
 .page-portlet-fullscreen .modal {
@@ -8262,12 +8262,17 @@ body[ng-controller] .modal {
     display: block;
     padding: 10px 15px
 }
-.accordion .panel .panel-title .accordion-toggle.accordion-toggle-styled {
-    background: url(../img/accordion-plusminus.png) right -19px no-repeat;
-    margin-right: 15px
+.accordion .panel .panel-title .accordion-toggle.accordion-toggle-styled:after {
+    content: '';
+    content: '';
+    background: url(../img/accordion-plusminus.png) -13px -27px no-repeat;
+    position: absolute;
+    right: 30px;
+    width: 13px;
+    height: 22px;
 }
-.accordion .panel .panel-title .accordion-toggle.accordion-toggle-styled.collapsed {
-    background-position: right 12px
+.accordion .panel .panel-title .accordion-toggle.accordion-toggle-styled.collapsed:after {
+    background-position: -13px 4px
 }
 .panel-heading {
     background: #eee

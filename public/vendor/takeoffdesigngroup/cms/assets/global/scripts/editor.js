@@ -168,17 +168,13 @@ $('#sectionEditor').on('show.bs.modal', function() {
            tinyMCE.editors[i].remove();
     }
 
-    crossDomain = typeof crossDomain !== 'undefined' ? crossDomain : false;
-    baseUrl = typeof baseUrl !== 'undefined' ? baseUrl : "";
-
-    fileManagerPath = (crossDomain ? baseUrl : '') + "/vendor/takeoffdesigngroup/cms/assets/global/plugins/vendor/filemanager/";
     tinyMCE.settings = {
         selector: "textarea.tinymce",
         plugins: [
             "advlist autolink lists link image charmap print preview hr anchor pagebreak",
             "searchreplace wordcount visualblocks visualchars code fullscreen",
-            "insertdatetime media nonbreaking save table contextmenu directionality responsivefilemanager",
-            "emoticons template paste textcolor",
+            "insertdatetime media nonbreaking save table directionality",
+            "emoticons template paste",
             (window.shortcodes != undefined ? "shortcodes" : "")
         ],
         // content_css: css,
@@ -208,19 +204,14 @@ $('#sectionEditor').on('show.bs.modal', function() {
             alignright: {selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'text-right'},
         },
         toolbar1: "styleselect | undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | hr | bullist numlist outdent indent",
-        toolbar2: "shortcodes | responsivefilemanager | link unlink anchor | image media | forecolor backcolor | print preview code",
+        toolbar2: "shortcodes | link unlink anchor | image media | forecolor backcolor | print preview code",
         height: "600",
         paste_as_text: true,
         image_advtab: true,
         browser_spellcheck: true,
         forced_root_block: 'p', // Set to false to disable.
         convert_urls : 0, // disables converting urls from absolute to relative
-        external_filemanager_path: fileManagerPath,
         extended_valid_elements: "svg[*],defs[*],style[*],path[*]",
-        filemanager_title:"File Manager" ,
-        filemanager_crossdomain: crossDomain,
-        filemanager_access_key: fmak,
-        external_plugins: { "filemanager" : fileManagerPath + "plugin.min.js"},
         /* fontselect
         font_formats : "Oswald=oswald;"+
             "Cambo=cambo",*/
@@ -233,7 +224,24 @@ $('#sectionEditor').on('show.bs.modal', function() {
                     }
                 });
             });
-        }
+        },
+
+        file_picker_types: 'image',
+        file_picker_callback (callback, value, meta) {
+            console.log('callback')
+            let x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth
+            let y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight
+
+            tinymce.activeEditor.windowManager.openUrl({
+                url : '/file-manager/tinymce5',
+                title : 'Laravel File manager',
+                width : x * 0.8,
+                height : y * 0.8,
+                onMessage: (api, message) => {
+                    callback(message.content, { text: message.text })
+                }
+            })
+        },
     };
 
     tinyMCE.execCommand('mceAddEditor', false, 'content_1');
@@ -265,6 +273,11 @@ $('#sectionEditor .btn.green').on('click', function() {
     App.startPageLoading({animate: true});
     updateSection();
 });
+
+function fmSetLink(id, $url) {
+    document.getElementById(id).value = $url;
+    $.fancybox.close();
+}
 
 function numericOnly(e) {
     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57))
@@ -778,9 +791,6 @@ function loadTemplates(url) {
 }
 
 function initTinyMCE(crossDomain, baseUrl) {
-    // var css = (crossDomain ? baseUrl : '') + "/css/editor.css?" + Date.now();
-    fileManagerPath = (crossDomain ? baseUrl : '') + "/vendor/takeoffdesigngroup/cms/assets/global/plugins/vendor/filemanager/";
-
     // shortcodes plugin
     if (window.shortcodes != undefined)
         tinymce.PluginManager.add('shortcodes', function (editor) {
@@ -864,6 +874,23 @@ function initTinyMCE(crossDomain, baseUrl) {
         browser_spellcheck: true,
         forced_root_block: 'p', // Set to false to disable.
         convert_urls : 0, // disables converting urls from absolute to relative
+
+        file_picker_types: 'image',
+        file_picker_callback (callback, value, meta) {
+            console.log('callback')
+            let x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth
+            let y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight
+
+            tinymce.activeEditor.windowManager.openUrl({
+                url : '/file-manager/tinymce5',
+                title : 'Laravel File manager',
+                width : x * 0.8,
+                height : y * 0.8,
+                onMessage: (api, message) => {
+                    callback(message.content, { text: message.text })
+                }
+            })
+        },
     });
 
     // note
@@ -896,8 +923,8 @@ function initTinyMCE(crossDomain, baseUrl) {
         plugins: [
             "advlist autolink lists link image charmap print preview hr anchor pagebreak",
             "searchreplace wordcount visualblocks visualchars code fullscreen",
-            "insertdatetime media nonbreaking save table contextmenu directionality responsivefilemanager",
-            "emoticons template paste textcolor"
+            "insertdatetime media nonbreaking save table directionality",
+            "emoticons template paste"
         ],
         style_formats: [
             {title: 'Headings', items: [
@@ -922,19 +949,31 @@ function initTinyMCE(crossDomain, baseUrl) {
         browser_spellcheck: true,
         forced_root_block: 'p', // Set to false to disable.
         convert_urls : 0, // disables converting urls from absolute to relative
-        external_filemanager_path: fileManagerPath,
-        filemanager_title:"File Manager" ,
-        filemanager_crossdomain: crossDomain,
-        filemanager_access_key: fmak,
-        external_plugins: { "filemanager" : fileManagerPath + "plugin.min.js"},
-
+        
         // update validation status on change
         setup: function (editor) {
             editor.on('change', function(args) {
                 tinyMCE.triggerSave();
                 $("#" + editor.id).valid();       
             });
-        }
+        },
+
+        file_picker_types: 'image',
+        file_picker_callback (callback, value, meta) {
+            console.log('callback')
+            let x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth
+            let y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight
+
+            tinymce.activeEditor.windowManager.openUrl({
+                url : '/file-manager/tinymce5',
+                title : 'Laravel File manager',
+                width : x * 0.8,
+                height : y * 0.8,
+                onMessage: (api, message) => {
+                    callback(message.content, { text: message.text })
+                }
+            })
+        },
     });
 
     tinymce.init({
@@ -942,8 +981,8 @@ function initTinyMCE(crossDomain, baseUrl) {
         plugins: [
             "advlist autolink lists link image charmap print preview hr anchor pagebreak",
             "searchreplace wordcount visualblocks visualchars code fullscreen",
-            "insertdatetime media nonbreaking save table contextmenu directionality responsivefilemanager",
-            "emoticons template paste textcolor",
+            "insertdatetime media nonbreaking save table directionality",
+            "emoticons template paste",
             (window.shortcodes != undefined ? "shortcodes" : "")
         ],
         // content_css: css,
@@ -973,19 +1012,14 @@ function initTinyMCE(crossDomain, baseUrl) {
             alignright: {selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'text-right'},
         },
         toolbar1: "styleselect | undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | hr | bullist numlist outdent indent",
-        toolbar2: "shortcodes | responsivefilemanager | link unlink anchor | image media | forecolor backcolor | print preview code",
+        toolbar2: "shortcodes | link unlink anchor | image media | forecolor backcolor | print preview code",
         height: "600",
         paste_as_text: true,
         image_advtab: true,
         browser_spellcheck: true,
         forced_root_block: 'p', // Set to false to disable.
         convert_urls : 0, // disables converting urls from absolute to relative
-        external_filemanager_path: fileManagerPath,
         extended_valid_elements: "svg[*],defs[*],style[*],path[*]",
-        filemanager_title:"File Manager" ,
-        filemanager_crossdomain: crossDomain,
-        filemanager_access_key: fmak,
-        external_plugins: { "filemanager" : fileManagerPath + "plugin.min.js"},
         /* fontselect
         font_formats : "Oswald=oswald;"+
             "Cambo=cambo",*/
@@ -998,7 +1032,24 @@ function initTinyMCE(crossDomain, baseUrl) {
                     }
                 });
             });
-        }
+        },
+
+        file_picker_types: 'image',
+        file_picker_callback (callback, value, meta) {
+            console.log('callback')
+            let x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth
+            let y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight
+
+            tinymce.activeEditor.windowManager.openUrl({
+                url : '/file-manager/tinymce5',
+                title : 'Laravel File manager',
+                width : x * 0.8,
+                height : y * 0.8,
+                onMessage: (api, message) => {
+                    callback(message.content, { text: message.text })
+                }
+            })
+        },
     });
 }
 

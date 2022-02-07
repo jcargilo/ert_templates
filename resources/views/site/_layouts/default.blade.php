@@ -70,7 +70,7 @@
             <div class="max-w-6xl mx-auto items-center lg:flex">
                 <div class="flex justify-between items-center md:block">
                     <a href="/">
-                        <img src="/images/static/logo.png" class="m-auto min-w-[250px] max-w-[300px] pb-0 md:pb-4 lg:pb-0">
+                        <img src="/images/static/logo.png" class="m-auto min-w-[250px] max-w-[300px] pb-0 md:pb-4 lg:pb-0 xl:max-w-[400px]">
                     </a>
 
                     <button id="mobile-open" class="md:hidden" type="button" aria-expanded="false">

@@ -15,12 +15,12 @@
 				<div class="{{ 
 					(!$section->full_width ? 'max-w-screen-xl lg:mx-auto px-4 xl:px-0' : ' w-full') .
 					($section->background_image ? ' relative z-10' : '') .
-					(" flex flex-wrap " . $section->vertical_alignment) .
+					(" flex flex-wrap gap-6 " . $section->vertical_alignment) .
 					($section->row_classes ? " {$section->row_classes}" : '')
 				}}"{!! $section->pageStyle === '' ? '' : ' style="'.$section->pageStyle.'"' !!}>
 					@if ($section->border_color !== '' && $section->border_style !== '' && 
 						($section->border_top_width > 0 || $section->border_right_width > 0 || $section->border_bottom_width > 0 || $section->border_left_width > 0))
-						<div class="flex-grow flex flex-wrap {{ $section->vertical_alignment }}" {!! $section->borderStyle === '' ? '' : ' style="'.$section->borderStyle.'"' !!}>
+						<div class="flex-grow flex flex-wrap gap-6 {{ $section->vertical_alignment }}" {!! $section->borderStyle === '' ? '' : ' style="'.$section->borderStyle.'"' !!}>
 					@endif
 
 					@for($i = 0; $i < $last_column = (is_array($section->layout) ? count($section->layout) : 1); $i++)
@@ -98,7 +98,7 @@
 @stop
 
 @section('scripts')
-	@if (count($page->sections) > 0)
+	{{-- @if (count($page->sections) > 0)
 	<script language="javascript">
 		$(function(){
 		@foreach ($page->sections as $section)
@@ -133,7 +133,7 @@
 	   	@endforeach
 	    });
 	</script>
-	@endif
+	@endif --}}
 
 	@if((!empty($posts) && BLOG_COMMENTS_ENABLED))
 	    <div id="fb-root"></div>

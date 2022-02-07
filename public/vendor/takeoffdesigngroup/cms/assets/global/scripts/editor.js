@@ -188,11 +188,11 @@ $('#sectionEditor').on('show.bs.modal', function() {
                 {title: 'Heading (Banner)', block: 'div', classes: 'heading1'},
             ]},
             {title: 'Text Sizes', items: [
-                {title: 'Extra Large', inline: 'span', classes: 'text-xlarge'},
-                {title: 'Large', inline: 'span', classes: 'text-large'},
-                {title: 'Medium', inline: 'span', classes: 'text-medium'},
-                {title: 'Small', inline: 'span', classes: 'text-small'},
-                {title: 'Smaller', inline: 'span', classes: 'text-tiny'},
+                {title: 'Extra Large', inline: 'span', classes: 'text-2xl'},
+                {title: 'Large', inline: 'span', classes: 'text-xl'},
+                {title: 'Medium', inline: 'span', classes: 'text-lg'},
+                {title: 'Small', inline: 'span', classes: 'text-sm'},
+                {title: 'Smaller', inline: 'span', classes: 'text-xs'},
             ]},
             {title: 'Colors', items: config.theme.colors},
             {title: 'Buttons', items: config.theme.buttons},
@@ -211,7 +211,7 @@ $('#sectionEditor').on('show.bs.modal', function() {
         browser_spellcheck: true,
         forced_root_block: 'p', // Set to false to disable.
         convert_urls : 0, // disables converting urls from absolute to relative
-        extended_valid_elements: "svg[*],defs[*],style[*],path[*]",
+        extended_valid_elements: "i[*],svg[*],defs[*],style[*],path[*]",
         /* fontselect
         font_formats : "Oswald=oswald;"+
             "Cambo=cambo",*/
@@ -1019,7 +1019,7 @@ function initTinyMCE(crossDomain, baseUrl) {
         browser_spellcheck: true,
         forced_root_block: 'p', // Set to false to disable.
         convert_urls : 0, // disables converting urls from absolute to relative
-        extended_valid_elements: "svg[*],defs[*],style[*],path[*]",
+        extended_valid_elements: "i[*],svg[*],defs[*],style[*],path[*]",
         /* fontselect
         font_formats : "Oswald=oswald;"+
             "Cambo=cambo",*/

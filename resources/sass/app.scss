@@ -16,3 +16,25 @@ nav li.has-submenu:hover nav::before {
     transform: translateX(-50%);
     width: 0;
 }
+
+h2 {
+    @apply text-3xl font-semibold text-blue-500;
+}
+
+a {
+    @apply font-bold text-blue-500 hover:underline hover:underline-offset-4;
+}
+
+.content-block {
+    p {
+        @apply mb-4;
+    }
+
+    ul {
+        @apply my-6 mx-8;
+
+        li {
+            @apply mb-2;
+        }
+    }
+}

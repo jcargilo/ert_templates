@@ -69,11 +69,11 @@
         <div class="px-6 py-4 bg-white">
             <div class="max-w-6xl mx-auto items-center lg:flex">
                 <div class="flex justify-between items-center md:block">
-                    <a href="/">
-                        <img src="/images/static/logo.png" class="m-auto min-w-[250px] max-w-[300px] pb-0 md:pb-4 lg:pb-0 xl:max-w-[400px]">
+                    <a href="/" class="flex justify-center min-w-[250px] pb-0 md:pb-4 lg:pb-0">
+                        <img src="/images/static/logo.png" class="max-w-[275px] xl:max-w-[400px]" alt="Forward Accounting">
                     </a>
 
-                    <button id="mobile-open" class="md:hidden" type="button" aria-expanded="false">
+                    <button id="mobile-open" class="ml-4 md:hidden" type="button" aria-expanded="false">
                         <svg class="h-8 w-8 text-blue-500 hover:text-blue-400" aria-hidden="true" focusable="false"
                             data-prefix="far" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 448 512" class="svg-inline--fa fa-bars fa-w-14 fa-3x">

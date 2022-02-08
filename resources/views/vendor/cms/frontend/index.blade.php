@@ -3,18 +3,13 @@
 @section('content')
 	@if (count($page->sections) > 0)
 		@foreach ($page->sections as $key => $section)
-			<section id="row-{!! $key !!}" class="{!! $section->class !!}{{ $section->classes ? " {$section->classes}" : '' }}"{!! $section->style ? " style=\"{$section->style}\"" : '' !!}>
+			<section id="row-{!! $key !!}" class="{!! $section->class !!}{{ $section->classes ? " {$section->classes}" : '' }}" style="{{ $section->style }}">
 				@if ($section->background_image)
-					@if ($section->background_parallax)
-						<div class="mcparallax" data-image-src="{{ $section->background_image }}" data-speed="5"{!! $section->background_position_x ? ' data-position-x="' . $section->background_position_x . '"' : '' !!}></div>
-					@else
-						<div class="{{ trim($section->background_css) }} top-0 left-0 right-0 bottom-0 z-0" style="{{ $section->background_styles }}"></div>
-					@endif
+					<span aria-hidden="true" class="absolute inset-0 z-10 opacity-60 bg-[#01133d] pointer-events-none"></span>
 				@endif
 
 				<div class="{{ 
 					(!$section->full_width ? 'max-w-screen-xl lg:mx-auto px-4 xl:px-0' : ' w-full') .
-					($section->background_image ? ' relative z-10' : '') .
 					(" flex flex-wrap gap-6 " . $section->vertical_alignment) .
 					($section->row_classes ? " {$section->row_classes}" : '')
 				}}"{!! $section->pageStyle === '' ? '' : ' style="'.$section->pageStyle.'"' !!}>

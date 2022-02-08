@@ -6135,7 +6135,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jcargilo/cms.git",
-                "reference": "927c1630c8bcc5f1194d5c7eb88d596ee2fac4de"
+                "reference": "f835f92fa1231cdbcea93c5c2e1a7aaa34e93c96"
             },
             "require": {
                 "alexusmai/laravel-file-manager": "^2.5",
@@ -6181,7 +6181,7 @@
             "keywords": [
                 "cms"
             ],
-            "time": "2022-02-07T18:27:09+00:00"
+            "time": "2022-02-08T16:00:50+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

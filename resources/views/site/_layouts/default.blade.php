@@ -11,7 +11,7 @@
     @yield('head')
     @if ($site->meta_tags !== '' && empty($print)){!! $site->meta_tags !!}@endif
 </head>
-<body class="relative h-full p-0 bg-gray-100">
+<body class="relative h-full p-0 bg-gray-100 selection:bg-blue-500 selection:text-white">
     <div id="mobile-menu" class="transition duration-100 -translate-x-full p-4 pt-8 absolute top-0 left-0 bg-gray-100 w-full z-50">
         <div class="text-right">
             <button

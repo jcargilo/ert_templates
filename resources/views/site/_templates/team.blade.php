@@ -36,7 +36,7 @@
                     </ul>
                 </div>
             @else
-                <p class="text-xl text-gray-500">No members have been added to the {{ $name }} team.</p>
+                <p class="text-xl text-gray-500">No members have been added to the {{ $name }}.</p>
             @endif
         </div>
     </section>

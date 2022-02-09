@@ -2,8 +2,8 @@
 <html class="no-js h-screen" lang="">
 <head>
     <meta charset="utf-8">
-    <title>{{ $seo ? $seo->title : $site->title }}</title>
-    <meta name="description" content="{{ $seo ? $seo->description : $site->seo_description }}">
+    <title>{{ isset($seo) ? $seo->title : $site->title }}</title>
+    <meta name="description" content="{{ isset($seo) ? $seo->description : $site->seo_description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @isset($site->favicon)<link rel="icon" type="image/png" href="{{ $site->favicon }}">@endisset
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
@@ -65,7 +65,7 @@
         </div>
     </div>
 
-    <div class="flex flex-col h-full">
+    <div class="flex flex-col">
         <div class="px-6 py-4 bg-white">
             <div class="max-w-6xl mx-auto items-center lg:flex">
                 <div class="flex justify-between items-center md:block">

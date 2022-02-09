@@ -14,6 +14,18 @@ module.exports = {
     }, {
       pattern: /max-w-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl)/,
       variants: ['sm', 'lg', 'xl'],
+    }, {
+      pattern: /m(t|r|b|l)-(4|6|10|12|14|20|32)/,
+      variants: ['sm', 'lg', 'xl'],
+    }, {
+      pattern: /m-(4|6|10|12|14|20|32)/,
+      variants: ['sm', 'lg', 'xl'],
+    }, {
+      pattern: /p(t|r|b|l)-(4|6|10|12|14|20|32)/,
+      variants: ['sm', 'lg', 'xl'],
+    }, {
+      pattern: /p-(4|6|10|12|14|20|32)/,
+      variants: ['sm', 'lg', 'xl'],
     }
   ],
   theme: {
@@ -38,5 +50,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio')
+  ],
 }

@@ -1,18 +1,28 @@
 @extends ('site.index')
 
 @php
-    switch (count($team)) {
-        case 1:
-        case 2:
-            $grid = "grid-cols-" . count($team);
-            break;
-        case 3:
-        case 5:
-        case 6:
-            $grid = "grid-cols-3";
-            break;
-        default:
-            $grid = "grid-cols-4";
+    $gap = "lg:gap-x-20";
+    $size = "h-40 w-40 xl:w-56 xl:h-56";
+    if ($name === 'Virtual Family Office') {
+        $grid = "lg:grid-cols-6";
+        $gap = "lg:gap-x-16";
+        $size = "h-40 w-40";
+    } else {
+        switch (count($team)) {
+            case 1:
+                $grid = "lg:grid-cols-1";
+                break;
+            case 2:
+                $grid = "lg:grid-cols-2";
+                break;
+            case 3:
+            case 5:
+            case 6:
+                $grid = "lg:grid-cols-3";
+                break;
+            default:
+                $grid = "lg:grid-cols-4";
+        }
     }
 @endphp
 
@@ -25,11 +35,11 @@
             </div>
             
             @if (count($team) > 0)
-                <ul role="list" class="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:{{ $grid }} lg:gap-x-20">
+                <ul role="list" class="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 {{ $grid }} {{ $gap }}">
                     @foreach ($team as $advisor)
                     <li>
                         <div class="space-y-4">
-                            <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 object-cover" src="{{ $advisor['PhotoURL'] }}" alt="">
+                            <img class="mx-auto rounded-full {{ $size }} object-cover" src="{{ $advisor['PhotoURL'] }}" alt="">
 
                             <div class="space-y-2">
                                 <div class="text-lg leading-6 font-medium space-y-1">

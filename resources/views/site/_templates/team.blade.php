@@ -14,7 +14,7 @@
                         @foreach ($team as $advisor)
                         <li class="w-full flex mb-0">
                             <div class="w-full relative bg-white border border-gray-200 rounded-lg p-3 hover:border-gray-300 hover:shadow-md">
-                                <div class="absolute top-0 left-0 z-0 w-full h-[62px] bg-blue-500 rounded-t-lg"></div>
+                                <div class="absolute top-0 left-0 z-0 w-full h-[62px] bg-gradient-to-r from-gray-200 via-gray-300 to-blue-400 rounded-t-lg"></div>
 
                                 <div class="h-full flex flex-col relative z-10 space-y-4">
                                     <img class="mx-auto h-32 w-32 rounded-full object-cover" src="{{ $advisor['PhotoURL'] }}" alt="">

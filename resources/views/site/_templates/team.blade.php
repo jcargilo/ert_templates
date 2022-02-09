@@ -9,8 +9,8 @@
             </div>
             
             @if (count($team) > 0)
-                <div class="max-w-4xl mx-auto">
-                    <ul role="list" class="grid grid-cols-4 gap-6">
+                <div class="max-w-5xl mx-auto">
+                    <ul role="list" class="grid grid-cols-5 gap-6">
                         @foreach ($team as $advisor)
                         <li class="w-full flex mb-0">
                             <div class="w-full relative bg-white border border-gray-200 rounded-lg p-3 hover:border-gray-300 hover:shadow-md">

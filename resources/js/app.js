@@ -5,6 +5,8 @@ Vue.config.devtools = false;
 
 window.Vue = Vue;
 
+Vue.component('team', require('@/Pages/Team/Index').default);
+
 new Vue({
     el: '#app',
     mounted() {

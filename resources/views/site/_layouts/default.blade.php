@@ -90,7 +90,9 @@
 
         @yield('banner')
         
-        @yield('content')
+        <div id="app">
+            @yield('content')
+        </div>
 
         @include('site._partials.footer')
     </div>

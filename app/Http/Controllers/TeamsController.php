@@ -18,7 +18,7 @@ class TeamsController extends SiteBaseController
         $data = Cache::remember('team', 3600, function () {
             $response = Http::withHeaders([
                 'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSGF5ZGVuUm9jayIsImF1dGgiOiJkOTNsYWRmaGo5MSRmam0ifQ.r3M517FO5ezm4UGDV5zldOVEfQg7mBfEKqPzlUNLoak',
-            ])->get('https://hookfast.dtpc.us/api/Expert/All');
+            ])->get('https://ffo.biz-diagnostic.com/api/Expert/All');
 
             if ($response->successful()) {
                 return $response->json();

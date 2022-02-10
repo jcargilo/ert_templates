@@ -1,6 +1,6 @@
 module.exports = {
   content: [
-    './resources/js/**/*.{html,js}',
+    './resources/js/**/*.{html,js,vue}',
     './resources/views/**/*.blade.php',
     './packages/takeoffdesigngroup/cms/resources/views/**/*.blade.php',
   ],
@@ -8,25 +8,31 @@ module.exports = {
     {
       pattern: /flex-(20|25|33|40|50|60|66|75|80|100)/,
       variants: ['sm', 'lg', 'xl'],
-    }, {
+    },
+    {
       pattern: /text-(xs|sm|md|lg|xl|2xl)/,
       variants: ['sm', 'lg', 'xl'],
-    }, {
+    },
+    {
       pattern: /max-w-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl)/,
       variants: ['sm', 'lg', 'xl'],
-    }, {
+    },
+    {
       pattern: /m(t|r|b|l)-(4|6|10|12|14|20|32)/,
       variants: ['sm', 'lg', 'xl'],
-    }, {
+    },
+    {
       pattern: /m-(4|6|10|12|14|20|32)/,
       variants: ['sm', 'lg', 'xl'],
-    }, {
+    },
+    {
       pattern: /p(t|r|b|l)-(4|6|10|12|14|20|32)/,
       variants: ['sm', 'lg', 'xl'],
-    }, {
+    },
+    {
       pattern: /p-(4|6|10|12|14|20|32)/,
       variants: ['sm', 'lg', 'xl'],
-    }
+    },
   ],
   theme: {
     extend: {
@@ -34,7 +40,7 @@ module.exports = {
         blue: {
           400: '#195f80',
           500: '#004261',
-        }
+        },
       },
       flex: {
         20: '0 1 calc(20% - (1.5rem * 2))',
@@ -50,7 +56,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/aspect-ratio')
-  ],
+  plugins: [require('@tailwindcss/aspect-ratio')],
 }

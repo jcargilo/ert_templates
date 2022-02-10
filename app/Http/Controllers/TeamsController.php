@@ -41,6 +41,13 @@ class TeamsController extends SiteBaseController
                 $name = 'Accounting Services Team';
         }
 
+        // Convert line breaks
+        foreach ($team as $key => $member) {
+            if (isset($team[$key]['LongBio'])) {
+                $team[$key]['LongBio'] = nl2br($team[$key]['LongBio']);
+            }
+        }
+
         return view()->make('site._templates.team', compact('team', 'name'));
     }
 }

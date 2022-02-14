@@ -51,7 +51,7 @@
           <div class="absolute top-0 right-0 pt-4 pr-4">
             <button
               type="button"
-              class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               @click="closeBio"
             >
               <span class="sr-only">Close</span>

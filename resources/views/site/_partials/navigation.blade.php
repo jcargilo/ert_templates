@@ -19,7 +19,7 @@
 								<span>{{ $item->title }}</span>
 								<i class="absolute right-0 bottom-2 far fa-angle-down transition-all group-hover:rotate-180"></i>
 							</a>
-							<nav class="opacity-0 invisible group-hover:visible group-hover:opacity-100 min-w-[240px] pt-4 absolute right-1/2 left-1/2 transform -translate-x-1/2 z-40">
+							<nav class="opacity-0 invisible group-hover:visible group-hover:opacity-100 min-w-[300px] pt-4 absolute right-1/2 left-1/2 transform -translate-x-1/2 z-40">
 								<div class="grid grid-rows-auto gap-4 text-center bg-blue-500 p-4">
 									@foreach($item->subpages as $second) 
 										<a

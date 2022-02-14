@@ -15,6 +15,10 @@ class TeamsController extends SiteBaseController
      */
     public function index()
     {
+        if (auth()->check()) {
+            Cache::forget('team');
+        }
+
         $data = Cache::remember('team', 3600, function () {
             $response = Http::withHeaders([
                 'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSGF5ZGVuUm9jayIsImF1dGgiOiJkOTNsYWRmaGo5MSRmam0ifQ.r3M517FO5ezm4UGDV5zldOVEfQg7mBfEKqPzlUNLoak',

@@ -16,9 +16,7 @@
         			@else
 						<div class="flex-col relative">
 							{{-- Don't allow main nav item to redirect user when a submenu is present. --}}
-							<a class="relative font-sans tracking-wider text-blue-500 hover:text-blue-500 decoration-2 hover:underline hover:underline-offset-8 pb-2 pr-4"
-								href="{{ URL::to('/'.$item->slug) }}"
-								{{ $item->redirect_new_window ? 'target="_blank"' : '' }}>
+							<a class="relative font-sans tracking-wider text-blue-500 hover:text-blue-500 decoration-2 hover:underline hover:underline-offset-8 pb-2 pr-4" onclick="javascript:void">
 								<span>{{ $item->title }}</span>
 								<i class="absolute right-0 bottom-2 far fa-angle-down transition-all group-hover:rotate-180"></i>
 							</a>

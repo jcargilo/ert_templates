@@ -1,5 +1,9 @@
-<nav class="md:flex-1">
-	<ul class="hidden justify-center md:flex lg:justify-end gap-8">
+<nav class="flex flex-col justify-between md:flex-1">
+	<div class="hidden absolute top-2 right-5 md:block">
+		<a href="javascript:void" class="text-sm">Client Portal</a>
+	</div>
+
+	<ul class="hidden justify-center gap-6 md:flex lg:mt-8 lg:justify-end xl:gap-8 xl:mt-10">
 	    @foreach($nav as $key => $item) 
 			{{-- // Ignore items that are not set to be displayed in the menu. --}}
 			@if ($item->display_in_menu || (isset($mobile) && $item->display_in_footer))

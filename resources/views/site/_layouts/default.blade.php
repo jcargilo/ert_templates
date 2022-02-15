@@ -61,13 +61,22 @@
                         </div>
                     @endif
                 @endforeach
+
+                <div class="md:hidden">
+                    <a
+                        class="font-sans tracking-wider text-blue-500 hover:text-blue-500 decoration-2 hover:underline hover:underline-offset-8"
+                        href="#"
+                    >
+                        <span>Client Portal</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="flex flex-col">
         <div class="px-6 py-4 bg-white">
-            <div class="max-w-6xl mx-auto items-center lg:flex">
+            <div class="max-w-6xl mx-auto lg:flex">
                 <div class="flex justify-between items-center md:block">
                     <a href="/" class="flex justify-center min-w-[250px] pb-0 md:pb-4 lg:pb-0">
                         <img src="/images/static/logo.png" class="max-w-[275px] xl:max-w-[400px]" alt="Forward Accounting">

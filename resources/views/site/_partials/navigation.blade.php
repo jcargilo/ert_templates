@@ -1,5 +1,5 @@
 <nav class="flex flex-col justify-between md:flex-1">
-	<div class="hidden absolute top-2 right-5 md:block">
+	<div class="hidden absolute top-2 right-0 md:block">
 		<a href="javascript:void" class="text-sm">Client Portal</a>
 	</div>
 

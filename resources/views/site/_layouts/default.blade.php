@@ -76,7 +76,7 @@
 
     <div class="flex flex-col">
         <div class="px-6 py-4 bg-white">
-            <div class="max-w-6xl mx-auto lg:flex">
+            <div class="relative max-w-6xl mx-auto lg:flex">
                 <div class="flex justify-between items-center md:block">
                     <a href="/" class="flex justify-center min-w-[250px] pb-0 md:pb-4 lg:pb-0">
                         <img src="/images/static/logo.png" class="max-w-[275px] xl:max-w-[400px]" alt="Forward Accounting">

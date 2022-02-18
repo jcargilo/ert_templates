@@ -5,12 +5,14 @@ module.exports = {
     './packages/takeoffdesigngroup/cms/resources/views/**/*.blade.php',
   ],
   safelist: [
+    'font-extrabold',
+    'tracking-tight',
     {
       pattern: /flex-(20|25|33|40|50|60|66|75|80|100)/,
       variants: ['sm', 'lg', 'xl'],
     },
     {
-      pattern: /text-(xs|sm|md|lg|xl|2xl)/,
+      pattern: /text-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl)/,
       variants: ['sm', 'lg', 'xl'],
     },
     {

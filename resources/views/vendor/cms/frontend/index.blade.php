@@ -3,7 +3,7 @@
 @section('content')
 	@if ($page->slug === 'planning-process')
 		<div class="max-w-6xl mx-auto flex justify-end mt-4">
-			<a href="https://ffo.biz-diagnostic.com" class="px-4 py-3 bg-blue-500 text-white tracking-wider rounded hover:no-underline hover:bg-blue-400 hover:text-white active:bg-[#407C98] active:text-white focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500" target="_blank">
+			<a href="https://ffo.biz-diagnostic.com" class="button" target="_blank">
 				Proactive Planning Platform <i class="fas fa-external-link ml-2"></i>
 			</a>
 		</div>

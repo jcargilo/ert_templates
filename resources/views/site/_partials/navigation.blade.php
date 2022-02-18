@@ -2,7 +2,7 @@
 	<div class="hidden md:flex md:justify-end">
 		<a 
 			href="javascript:void"
-			class="px-3 py-1.5 bg-primary text-white text-sm tracking-wider rounded hover:no-underline hover:bg-secondary hover:text-white active:bg-link-active active:text-white focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary"
+			class="button button-sm"
 			{{-- target="_blank" --}}
 		>
 			Client Portal <i class="fas fa-external-link ml-2"></i>

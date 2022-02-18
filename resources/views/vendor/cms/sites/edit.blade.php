@@ -161,7 +161,7 @@
                                 <div class="gap-6 items-center justify-between sm:flex sm:w-1/2">
                                     <label for="primary_color" class="flex-1 control-label">Primary Color:</label>
                                     <div class="w-64 relative">
-                                        {{ Form::text('attributes[theme][primary_color]', NULL, [
+                                        {{ Form::text('attributes[theme][primary_color]', $site->attributes['theme']['primary_color'] ?? '#555555', [
                                             "id" => "primary_color",
                                             "class" => "form-control colorpicker",
                                         ]) }}
@@ -171,7 +171,7 @@
                                 <div class="gap-6 items-center justify-between sm:flex sm:w-1/2">
                                     <label for="secondary_color" class="flex-1 control-label">Secondary Color:</label>
                                     <div class="w-64 relative">
-                                        {{ Form::text('attributes[theme][secondary_color]', NULL, [
+                                        {{ Form::text('attributes[theme][secondary_color]', $site->attributes['theme']['secondary_color'] ?? '#888888', [
                                             "id" => "secondary_color",
                                             "class" => "form-control colorpicker",
                                         ]) }}

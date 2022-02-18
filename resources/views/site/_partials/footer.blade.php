@@ -29,7 +29,7 @@
         </nav>
 
         <div class="py-4 font-sans text-xs text-gray-600">
-            © {{ date('Y') }} {{ config('app.name') }}
+            © {{ date('Y') }} {{ $site->title }}
         </div>
     </div>
 </div>

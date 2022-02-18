@@ -6,9 +6,9 @@
                     Maximizing Our Clients' Potential Through Proactive &amp; Holistic Planning
                 </span>
             </div>
-            <button type="button" class="px-4 py-3 bg-secondary text-white tracking-wider rounded hover:bg-primary hover:text-white active:bg-link-active" href="/contact">
-                Contact Us
-            </button>
+            <a class="button button-reversed" href="/contact">
+                <span class="font-normal">Contact Us</span>
+            </a>
         </div>
     </div>
 </div>

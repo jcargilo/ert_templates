@@ -55,7 +55,7 @@
                 </div>
                 <!-- END SIDEBAR USER TITLE -->
                 <!-- SIDEBAR MENU -->
-                <div class="profile-usermenu">
+                <div class="profile-usermenu pb-0">
                     <ul class="nav">
                         <li class="active"><a data-title="General" data-url="/account/site/settings/general" href="#tab_details" data-toggle="tab"><i class="fa fa-cogs"></i>General</a></li>
                         @if (auth()->user()->hasRole('administrator'))
@@ -87,7 +87,7 @@
                             </div>
                         </div>
                         <div class="portlet-body">
-                            <div class="row">
+                            <div class="row mb-6 border-b border-gray-200 gap-6 pb-6">
                                 <div class="col-sm-8">
                                     <div class="form-group">
                                         <label for="title" class="control-label">Site Title:<span class="required"> * </span></label>
@@ -157,7 +157,7 @@
                             </div>
                         </div>
                         <div class="portlet-body">
-                            <div class="flex flex-col items-center gap-6 mb-6">
+                            <div class="flex flex-col items-center mb-6 border-b border-gray-200 gap-6 pb-6">
                                 <div class="gap-6 items-center justify-between sm:flex sm:w-1/2">
                                     <label for="primary_color" class="flex-1 control-label">Primary Color:</label>
                                     <div class="w-64 relative">
@@ -209,8 +209,6 @@
                                 </div>
                             </div>
 
-                            <hr>
-
                             <button class="btn btn-success" data-action="continue"><i class="fa fa-check"></i> Save Changes</button>
                             <a href="{{ route('sites.index') }}" class="btn btn-secondary-outline default" name="reset" value="reset">Cancel</a>
                         </div>
@@ -229,14 +227,16 @@
                             </div>
                         </div>
                         <div class="portlet-body">
-                            @foreach ($site->menu as $item)
-                                <div class="row form-group vcenter-sm vcenter-lg">
-                                    <label for="{{ $item->plugin }}" class="col-sm-6 col-md-12 col-sm-6 text-right-sm">{{ $item->title }}</label>
-                                    <div class="col-sm-6 col-md-12 col-sm-6 text-right-lg">
-                                        <input type="checkbox" name="menu[]" class="make-switch" value="{{ $item->id }}" data-size="small" data-on-color="info" data-on-text="Enabled" data-off-text="Disabled"{{ $item->enabled ? ' checked="checked"' : '' }} />
+                            <div class="mb-6 border-b border-gray-200 gap-6 pb-6">
+                                @foreach ($site->menu as $item)
+                                    <div class="row form-group vcenter-sm vcenter-lg">
+                                        <label for="{{ $item->plugin }}" class="col-sm-6 col-md-12 col-sm-6 text-right-sm">{{ $item->title }}</label>
+                                        <div class="col-sm-6 col-md-12 col-sm-6 text-right-lg">
+                                            <input type="checkbox" name="menu[]" class="make-switch" value="{{ $item->id }}" data-size="small" data-on-color="info" data-on-text="Enabled" data-off-text="Disabled"{{ $item->enabled ? ' checked="checked"' : '' }} />
+                                        </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
 
                             <hr>
 
@@ -257,30 +257,32 @@
                             </div>
                         </div>
                         <div class="portlet-body">
-                            <div class="form-group">
-                                <label for="seo_title" class="control-label">Meta Title:</label>
-                                <div class="validate">{{ Form::text('seo_title', NULL, ['class' => 'form-control maxlength-handler', 'maxlength' => '100']) }}</div>
-                                <span class="text-info small"> max 100 chars </span>
-                            </div>
-                            <div class="form-group">
-                                <label for="seo_keywords" class="control-label">Meta Keywords:</label>
-                                <div class="validate">{{ Form::textarea('seo_keywords', NULL, ['class' => 'form-control maxlength-handler', 'maxlength' => '255', 'rows' => '5']) }}</div>
-                                <span class="text-info small"> max 255 chars </span>
-                            </div>
-                            <div class="form-group">
-                                <label for="seo_description" class="control-label">Meta Description:</label>
-                                <div class="validate">{{ Form::textarea('seo_description', NULL, ['class' => 'form-control maxlength-handler', 'maxlength' => '255', 'rows' => '5']) }}</div>
-                                <span class="text-info small"> max 255 chars </span>
-                            </div>
+                            <div class="mb-6 border-b border-gray-200 gap-6 pb-6">
+                                <div class="form-group">
+                                    <label for="seo_title" class="control-label">Meta Title:</label>
+                                    <div class="validate">{{ Form::text('seo_title', NULL, ['class' => 'form-control maxlength-handler', 'maxlength' => '100']) }}</div>
+                                    <span class="text-info small"> max 100 chars </span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="seo_keywords" class="control-label">Meta Keywords:</label>
+                                    <div class="validate">{{ Form::textarea('seo_keywords', NULL, ['class' => 'form-control maxlength-handler', 'maxlength' => '255', 'rows' => '5']) }}</div>
+                                    <span class="text-info small"> max 255 chars </span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="seo_description" class="control-label">Meta Description:</label>
+                                    <div class="validate">{{ Form::textarea('seo_description', NULL, ['class' => 'form-control maxlength-handler', 'maxlength' => '255', 'rows' => '5']) }}</div>
+                                    <span class="text-info small"> max 255 chars </span>
+                                </div>
 
-                            <div class="form-group">
-                                <label for="meta_tags" class="control-label">Custom Meta Tags:</label>
-                                <div class="validate">{{ Form::textarea('meta_tags', NULL, ['class' => 'form-control', 'rows' => '8']) }}</div>
-                            </div>
+                                <div class="form-group">
+                                    <label for="meta_tags" class="control-label">Custom Meta Tags:</label>
+                                    <div class="validate">{{ Form::textarea('meta_tags', NULL, ['class' => 'form-control', 'rows' => '8']) }}</div>
+                                </div>
 
-                            <div class="form-group">
-                                <label for="scripts" class="control-label">Custom Scripts:</label>
-                                <div class="validate">{{ Form::textarea('scripts', NULL, ['class' => 'form-control', 'rows' => '8']) }}</div>
+                                <div class="form-group">
+                                    <label for="scripts" class="control-label">Custom Scripts:</label>
+                                    <div class="validate">{{ Form::textarea('scripts', NULL, ['class' => 'form-control', 'rows' => '8']) }}</div>
+                                </div>
                             </div>
 
                             <hr>
@@ -301,7 +303,7 @@
                             </div>
                         </div>
                         <div class="portlet-body">
-                            <div class="row">
+                            <div class="row mb-6 border-b border-gray-200 gap-6 pb-6">
                                 <div class="col-md-6">
                                     <div class="portlet">
                                         <div class="portlet-title">
@@ -380,83 +382,85 @@
                             </div>
                         </div>
                         <div class="portlet-body">
-                            <div class="form-group vcenter">
-                                <label for="facebook" class="col-xs-2 control-label padding-top-0">
-                                    <span class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-blue font-white socicon-facebook"></span>
-                                </label>
-                                <div class="col-xs-10 input-group">
-                                    <span class="input-group-addon hidden-xs" id="facebook_url">http://www.facebook.com/</span>
-                                    {{ Form::text('facebook', NULL, ['id' => 'facebook', 'class' => 'form-control', 'aria-describedby' => 'facebook_url', 'placeholder' => 'username']) }}
+                            <div class="mb-6 border-b border-gray-200 gap-6 pb-6">
+                                <div class="form-group vcenter">
+                                    <label for="facebook" class="col-xs-2 control-label padding-top-0">
+                                        <span class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-blue font-white socicon-facebook"></span>
+                                    </label>
+                                    <div class="col-xs-10 input-group">
+                                        <span class="input-group-addon hidden-xs" id="facebook_url">http://www.facebook.com/</span>
+                                        {{ Form::text('facebook', NULL, ['id' => 'facebook', 'class' => 'form-control', 'aria-describedby' => 'facebook_url', 'placeholder' => 'username']) }}
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group vcenter">
-                                <label for="twitter" class="col-xs-2 control-label padding-top-0">
-                                    <span class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-green font-white socicon-twitter"></span>
-                                </label>
-                                <div class="col-xs-10 input-group">
-                                    <span class="input-group-addon hidden-xs" id="twitter_url">http://www.twitter.com/</span>
-                                    {{ Form::text('twitter', NULL, ['id' => 'twitter', 'class' => 'form-control', 'aria-describedby' => 'twitter_url', 'placeholder' => 'username']) }}
+                                <div class="form-group vcenter">
+                                    <label for="twitter" class="col-xs-2 control-label padding-top-0">
+                                        <span class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-green font-white socicon-twitter"></span>
+                                    </label>
+                                    <div class="col-xs-10 input-group">
+                                        <span class="input-group-addon hidden-xs" id="twitter_url">http://www.twitter.com/</span>
+                                        {{ Form::text('twitter', NULL, ['id' => 'twitter', 'class' => 'form-control', 'aria-describedby' => 'twitter_url', 'placeholder' => 'username']) }}
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group vcenter">
-                                <label for="googleplus" class="col-xs-2 control-label padding-top-0">
-                                    <span class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-yellow font-white socicon-google"></span>
-                                </label>
-                                <div class="col-xs-10 input-group">
-                                    <span class="input-group-addon hidden-xs" id="googleplus_url">http://plus.google.com/</span>
-                                    {{ Form::text('googleplus', NULL, ['id' => 'googleplus', 'class' => 'form-control', 'aria-describedby' => 'googleplus_url', 'placeholder' => 'username']) }}
+                                <div class="form-group vcenter">
+                                    <label for="googleplus" class="col-xs-2 control-label padding-top-0">
+                                        <span class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-yellow font-white socicon-google"></span>
+                                    </label>
+                                    <div class="col-xs-10 input-group">
+                                        <span class="input-group-addon hidden-xs" id="googleplus_url">http://plus.google.com/</span>
+                                        {{ Form::text('googleplus', NULL, ['id' => 'googleplus', 'class' => 'form-control', 'aria-describedby' => 'googleplus_url', 'placeholder' => 'username']) }}
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group vcenter">
-                                <label for="instagram" class="col-xs-2 control-label padding-top-0">
-                                    <span class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-red font-white socicon-instagram"></span>
-                                </label>
-                                <div class="col-xs-10 input-group">
-                                    <span class="input-group-addon hidden-xs" id="instagram_url">http://www.instagram.com/</span>
-                                    {{ Form::text('instagram', NULL, ['id' => 'instagram', 'class' => 'form-control', 'aria-describedby' => 'instagram_url', 'placeholder' => 'username']) }}
+                                <div class="form-group vcenter">
+                                    <label for="instagram" class="col-xs-2 control-label padding-top-0">
+                                        <span class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-red font-white socicon-instagram"></span>
+                                    </label>
+                                    <div class="col-xs-10 input-group">
+                                        <span class="input-group-addon hidden-xs" id="instagram_url">http://www.instagram.com/</span>
+                                        {{ Form::text('instagram', NULL, ['id' => 'instagram', 'class' => 'form-control', 'aria-describedby' => 'instagram_url', 'placeholder' => 'username']) }}
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group vcenter">
-                                <label for="flickr" class="col-xs-2 control-label padding-top-0">
-                                    <span class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-red font-white socicon-flickr"></span>
-                                </label>
-                                <div class="col-xs-10 input-group">
-                                    <span class="input-group-addon hidden-xs" id="flickr_url">http://www.flickr.com/</span>
-                                    {{ Form::text('flickr', NULL, ['id' => 'flickr', 'class' => 'form-control', 'aria-describedby' => 'flickr_url', 'placeholder' => 'username']) }}
+                                <div class="form-group vcenter">
+                                    <label for="flickr" class="col-xs-2 control-label padding-top-0">
+                                        <span class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-red font-white socicon-flickr"></span>
+                                    </label>
+                                    <div class="col-xs-10 input-group">
+                                        <span class="input-group-addon hidden-xs" id="flickr_url">http://www.flickr.com/</span>
+                                        {{ Form::text('flickr', NULL, ['id' => 'flickr', 'class' => 'form-control', 'aria-describedby' => 'flickr_url', 'placeholder' => 'username']) }}
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group vcenter">
-                                <label for="pinterest" class="col-xs-2 control-label padding-top-0">
-                                    <span class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-dark font-white socicon-pinterest"></span>
-                                </label>
-                                <div class="col-xs-10 input-group">
-                                    <span class="input-group-addon hidden-xs" id="pinterest_url">http://www.pinterest.com/</span>
-                                    {{ Form::text('pinterest', NULL, ['id' => 'pinterest', 'class' => 'form-control', 'aria-describedby' => 'pinterest_url', 'placeholder' => 'username']) }}
+                                <div class="form-group vcenter">
+                                    <label for="pinterest" class="col-xs-2 control-label padding-top-0">
+                                        <span class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-dark font-white socicon-pinterest"></span>
+                                    </label>
+                                    <div class="col-xs-10 input-group">
+                                        <span class="input-group-addon hidden-xs" id="pinterest_url">http://www.pinterest.com/</span>
+                                        {{ Form::text('pinterest', NULL, ['id' => 'pinterest', 'class' => 'form-control', 'aria-describedby' => 'pinterest_url', 'placeholder' => 'username']) }}
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group vcenter">
-                                <label for="linkedin" class="col-xs-2 control-label padding-top-0">
-                                    <span class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-green font-white socicon-linkedin"></span>
-                                </label>
-                                <div class="col-xs-10 input-group">
-                                    <span class="input-group-addon hidden-xs" id="linkedin_url">http://www.linkedin.com/</span>
-                                    {{ Form::text('linkedin', NULL, ['id' => 'linkedin', 'class' => 'form-control', 'aria-describedby' => 'linkedin_url', 'placeholder' => 'username']) }}
+                                <div class="form-group vcenter">
+                                    <label for="linkedin" class="col-xs-2 control-label padding-top-0">
+                                        <span class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-green font-white socicon-linkedin"></span>
+                                    </label>
+                                    <div class="col-xs-10 input-group">
+                                        <span class="input-group-addon hidden-xs" id="linkedin_url">http://www.linkedin.com/</span>
+                                        {{ Form::text('linkedin', NULL, ['id' => 'linkedin', 'class' => 'form-control', 'aria-describedby' => 'linkedin_url', 'placeholder' => 'username']) }}
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group vcenter">
-                                <label for="youtube" class="col-xs-2 control-label padding-top-0">
-                                    <span class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-green font-white socicon-youtube"></span>
-                                </label>
-                                <div class="col-xs-10 input-group">
-                                    <span class="input-group-addon hidden-xs" id="youtube_url">http://www.youtube.com/</span>
-                                    {{ Form::text('youtube', NULL, ['id' => 'youtube', 'class' => 'form-control', 'aria-describedby' => 'youtube_url', 'placeholder' => 'username']) }}
+                                <div class="form-group vcenter">
+                                    <label for="youtube" class="col-xs-2 control-label padding-top-0">
+                                        <span class="socicon-btn socicon-btn-circle socicon-sm socicon-solid bg-green font-white socicon-youtube"></span>
+                                    </label>
+                                    <div class="col-xs-10 input-group">
+                                        <span class="input-group-addon hidden-xs" id="youtube_url">http://www.youtube.com/</span>
+                                        {{ Form::text('youtube', NULL, ['id' => 'youtube', 'class' => 'form-control', 'aria-describedby' => 'youtube_url', 'placeholder' => 'username']) }}
+                                    </div>
                                 </div>
                             </div>
 

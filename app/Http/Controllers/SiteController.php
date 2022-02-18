@@ -19,7 +19,7 @@ class SiteController extends SiteBaseController
         // Check for coming soon page setting.
         if ($this->site->show_coming_soon && 
             ($slug === '/' || $slug === '' || $slug === 'coming-soon'))
-            return \View::make('site._layouts.coming_soon');
+            return view()->make('cms::frontend._templates.coming_soon');
 
         else if ($slug === '/' || $slug === '')
             $slug = 'home';

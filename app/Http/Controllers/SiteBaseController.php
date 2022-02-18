@@ -2,8 +2,8 @@
 
 use App\Models\Occasion as Occasion;
 use App\Models\Cookie as Cookie; 
-use App\Models\Site;
 use TakeoffDesignGroup\CMS\Models\Pages\Page;
+use TakeoffDesignGroup\CMS\Models\Sites\Site;
 use TakeoffDesignGroup\CMS\Models\Widgets\Category;
 use TakeoffDesignGroup\CMS\Models\Widgets\Widget;
 use TakeoffDesignGroup\CMS\Helpers\Helpers;

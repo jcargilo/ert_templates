@@ -1,8 +1,11 @@
-<?php namespace App\Http\Controllers;
+<?php 
+
+namespace App\Http\Controllers;
  
+use App\Models\Slideshows\Slideshow;
+use App\Models\Team;
 use TakeoffDesignGroup\CMS\Models\Pages\Page;
 use TakeoffDesignGroup\CMS\Models\Logs\EmailLog;
-use App\Models\Slideshows\Slideshow;
 use TakeoffDesignGroup\CMS\Models\Testimonials\Testimonial;
 use TakeoffDesignGroup\CMS\Models\Widgets\Category;
 use TakeoffDesignGroup\CMS\Models\Widgets\Widget;
@@ -122,6 +125,12 @@ class SiteController extends SiteBaseController
                     // Load custom functionality
                     switch($column->template->url)
                     {
+                        case 'team_accounting':
+                        case 'team_ppt':
+                        case 'team_vfo':
+                            $team = new Team($column->template->url);
+                            $template = view()->make('site._templates.team', compact('team'));
+                            break;
                         default:
                             $template = view()->exists('site._templates.'.$column->template->url)
                                 ? view()->make('site._templates.'.$column->template->url)

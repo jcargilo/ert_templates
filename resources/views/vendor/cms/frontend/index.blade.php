@@ -2,7 +2,7 @@
 
 @section('content')
 	@if ($page->slug === 'planning-process')
-		<div class="max-w-6xl mx-auto flex justify-end mt-4">
+		<div class="max-w-6xl mx-auto flex justify-end mt-4 px-4">
 			<a href="https://ffo.biz-diagnostic.com" class="button" target="_blank">
 				Proactive Planning Platform <i class="fas fa-external-link ml-2"></i>
 			</a>

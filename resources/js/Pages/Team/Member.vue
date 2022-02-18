@@ -12,11 +12,7 @@
         </div>
 
         <div>
-          <button
-            class="w-full rounded-2xl border border-primary bg-opacity-20 px-6 py-1 hover:bg-primary hover:ring-1 hover:ring-primary focus:bg-primary focus:bg-opacity-20 focus:ring-1 focus:ring-primary active:bg-primary active:bg-opacity-25 active:ring-1 active:ring-link-active"
-            aria-label=""
-            @click="$emit('openBio', member)"
-          >
+          <button class="w-full" aria-label="Bio" @click="$emit('openBio', member)">
             <span class="font-medium">Bio</span>
           </button>
         </div>

@@ -39,9 +39,9 @@ a {
   }
 }
 
-button,
+.content-block button,
 .button {
-  @apply rounded tracking-wider;
+  @apply inline-block rounded tracking-wider;
 
   &.button-sm {
     @apply px-3 py-1.5;

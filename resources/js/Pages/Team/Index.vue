@@ -42,11 +42,7 @@
           }"
         >
           <div class="absolute top-0 right-0 pt-4 pr-4">
-            <button
-              type="button"
-              class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-              @click="closeBio"
-            >
+            <button type="button" class="button button-reversed" @click="closeBio">
               <span class="sr-only">Close</span>
               <svg
                 class="h-6 w-6"

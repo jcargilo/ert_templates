@@ -29,19 +29,25 @@ class SiteController extends SiteBaseController
 
     public function contact(Request $request)
     {
-        // Get form input, add additional keys to array.
-        $data = $request->all();
-        
-        if ($data['email'] === '')
-        {
-            // Setup reply to.
+        $request->validate([
+            'name' => 'required',
+            'cemail' => 'required',
+            'message' => 'required',
+        ], [
+            'cemail.required' => 'The email field is required.'
+        ]);
+
+        $data = $request->except(['email', 'website', 'url']);
+
+        if (!$request->get('email') && !$request->get('website') && !$request->get('url')) {
             $replyTo = array(
                 'email' => $data['cemail'],
-                'name'  => $data['first_name'].' '.$data['last_name'],
+                'name'  => $data['name'],
             );
 
             $this->sendEmailToAdmin('site.emails.contact', 'Contact Request', $data, $replyTo);
         }
+
         return Redirect::back()->with('success', 'Your contact request has been submitted successfully to '.$this->site->title.'.');
     }
 

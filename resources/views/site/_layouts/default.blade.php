@@ -5,6 +5,7 @@
     <title>{{ isset($seo) ? $seo->title : $site->title }}</title>
     <meta name="description" content="{{ isset($seo) ? $seo->description : $site->seo_description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @isset($site->favicon)<link rel="icon" type="image/png" href="{{ $site->favicon }}">@endisset
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-rqn26AG5Pj86AF4SO72RK5fyefcQ/x32DNQfChxWvbXIyXFePlEktwD18fEz+kQU" crossorigin="anonymous">

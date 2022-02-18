@@ -4,12 +4,8 @@ The following information was submitted via the Contact Request form:<br />
 <hr />
 <table>
     <tr>
-        <td width="150px">First Name:</td>
-        <td>{{ $first_name }}</td>
-    </tr>
-    <tr>
-        <td>Last Name:</td>
-        <td>{{ $last_name }}</td>
+        <td width="150px">Name:</td>
+        <td>{{ $name }}</td>
     </tr>
     <tr>
         <td>Company Name:</td>
@@ -25,7 +21,7 @@ The following information was submitted via the Contact Request form:<br />
     </tr>
     <tr>
         <td valign="top">Message:</td>
-        <td>{{ $msg }}</td>
+        <td>{{ $message }}</td>
     </tr>
 </table>
 <br />

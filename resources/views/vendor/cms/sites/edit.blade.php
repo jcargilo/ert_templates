@@ -189,20 +189,20 @@
                                 </div>
 
                                 <div class="gap-6 items-center justify-between sm:flex sm:w-1/2">
-                                    <label for="secondary_color" class="flex-1 control-label">Link Hover Color:</label>
+                                    <label for="link_hover_color" class="flex-1 control-label">Link Hover Color:</label>
                                     <div class="w-64 relative">
-                                        {{ Form::text('attributes[theme][secondary_color]', $site->attributes['theme']['link_hover_color'] ?? ($site->attributes['theme']['secondary_color'] ?? '#888888'), [
-                                            "id" => "secondary_color",
+                                        {{ Form::text('attributes[theme][link_hover_color]', $site->attributes['theme']['link_hover_color'] ?? ($site->attributes['theme']['secondary_color'] ?? '#888888'), [
+                                            "id" => "link_hover_color",
                                             "class" => "form-control colorpicker",
                                         ]) }}
                                     </div>
                                 </div>
 
                                 <div class="gap-6 items-center justify-between sm:flex sm:w-1/2">
-                                    <label for="secondary_color" class="flex-1 control-label">Link Active Color:</label>
+                                    <label for="link_active_color" class="flex-1 control-label">Link Active Color:</label>
                                     <div class="w-64 relative">
-                                        {{ Form::text('attributes[theme][secondary_color]', $site->attributes['theme']['link_active_color'] ?? ($site->attributes['theme']['primary_color'] ?? '#555555'), [
-                                            "id" => "secondary_color",
+                                        {{ Form::text('attributes[theme][link_active_color]', $site->attributes['theme']['link_active_color'] ?? ($site->attributes['theme']['primary_color'] ?? '#555555'), [
+                                            "id" => "link_active_color",
                                             "class" => "form-control colorpicker",
                                         ]) }}
                                     </div>

@@ -13,7 +13,7 @@
 		@foreach ($page->sections as $key => $section)
 			<section id="row-{!! $key !!}" class="{!! $section->class !!}{{ $section->classes ? " {$section->classes}" : '' }}" style="{{ $section->style }}">
 				@if ($section->background_image)
-					<span aria-hidden="true" class="absolute inset-0 z-10 opacity-60 bg-[#01133d] pointer-events-none"></span>
+					<span aria-hidden="true" class="absolute inset-0 z-10 bg-primary opacity-60 mix-blend-multiply pointer-events-none"></span>
 				@endif
 
 				<div class="{{ 

@@ -1,5 +1,5 @@
 <div class="relative min-h-[430px] max-w-screen flex items-center justify-center">
-    <span aria-hidden="true" class="absolute inset-0 z-10 opacity-60 bg-[#01133d] pointer-events-none"></span>
+    <span aria-hidden="true" class="absolute inset-0 z-10 bg-primary opacity-60 mix-blend-multiply pointer-events-none"></span>
 
     <img class="absolute inset-0 z-0 w-full h-full object-cover"
         alt=""

@@ -41,10 +41,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        blue: {
-          400: '#195f80',
-          500: '#004261',
-        },
+        primary: 'var(--primary-color)',
+        secondary: 'var(--secondary-color)',
+        link: 'var(--link-color)',
+        'link-hover': 'var(--link-hover-color)',
+        'link-active': 'var(--link-active-color)',
       },
       flex: {
         20: '0 1 calc(20% - (1.5rem * 2))',

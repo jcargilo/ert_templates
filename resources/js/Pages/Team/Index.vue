@@ -44,7 +44,7 @@
           <div class="absolute top-0 right-0 pt-4 pr-4">
             <button
               type="button"
-              class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               @click="closeBio"
             >
               <span class="sr-only">Close</span>
@@ -62,7 +62,7 @@
           </div>
           <div class="sm:flex sm:items-start">
             <div class="mt-3 sm:mt-0 sm:ml-4">
-              <h3 class="text-lg font-medium leading-6 text-blue-500" id="modal-title">{{ member.Name }}</h3>
+              <h3 class="text-lg font-medium leading-6 text-primary" id="modal-title">{{ member.Name }}</h3>
               <p class="leading-6 text-gray-700">{{ member.ShortBio }}</p>
               <div class="mt-3 border-t border-gray-400 pt-3">
                 <p class="leading-relaxed text-gray-500" v-html="member.LongBio"></p>

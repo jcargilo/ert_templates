@@ -19,7 +19,7 @@
         <p class="mt-6">Your Future-Focused, Proactive Partners</p>
 
         <div class="mt-2">
-            <a class="px-4 py-3 bg-white text-blue-500 tracking-wider rounded hover:no-underline hover:bg-blue-400 hover:text-white active:bg-[#407C98] active:text-white" href="/contact">
+            <a class="px-4 py-3 bg-white text-primary tracking-wider rounded hover:no-underline hover:bg-secondary hover:text-white active:bg-link-active active:text-white" href="/contact">
                 <span class="font-normal">Contact Us</span>
             </a>
         </div>

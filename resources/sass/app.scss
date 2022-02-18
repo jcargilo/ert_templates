@@ -3,38 +3,38 @@
 @tailwind utilities;
 
 nav li.has-submenu:hover nav::before {
-    border-bottom: 10px solid theme('colors.blue.500');
-    border-bottom: 10px solid theme('colors.blue.500');
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    content: "";
-    display: inline-block;
-    height: 0;
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
+  border-bottom: 10px solid theme('colors.primary');
+  border-bottom: 10px solid theme('colors.primary');
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  content: '';
+  display: inline-block;
+  height: 0;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
 }
 
 h2 {
-    @apply text-3xl font-semibold text-blue-500;
+  @apply text-3xl font-semibold text-primary;
 }
 
 a {
-    @apply font-bold text-blue-500 hover:underline hover:underline-offset-4;
+  @apply font-bold text-primary hover:underline hover:underline-offset-4;
 }
 
 .content-block {
-    p {
-        @apply mb-4;
-    }
+  p {
+    @apply mb-4;
+  }
 
-    ul {
-        @apply my-6 mx-8;
+  ul {
+    @apply my-6 mx-8;
 
-        li {
-            @apply mb-2;
-        }
+    li {
+      @apply mb-2;
     }
+  }
 }

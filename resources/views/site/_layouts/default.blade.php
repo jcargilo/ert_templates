@@ -11,14 +11,23 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-rqn26AG5Pj86AF4SO72RK5fyefcQ/x32DNQfChxWvbXIyXFePlEktwD18fEz+kQU" crossorigin="anonymous">
     @yield('head')
     @if ($site->meta_tags !== '' && empty($print)){!! $site->meta_tags !!}@endif
+    <style>
+        :root{
+          --primary-color: {{ Arr::get($site->attributes, 'theme.primary_color', '#555555') }};
+          --secondary-color: {{ Arr::get($site->attributes, 'theme.secondary_color', '#888888') }};
+          --link-color: {{ Arr::get($site->attributes, 'theme.link_color', Arr::get($site->attributes, 'theme.primary_color', '#555555') ) }};
+          --link-hover-color: {{ Arr::get($site->attributes, 'theme.link_hover_color', Arr::get($site->attributes, 'theme.secondary_color', '#888888')) }};
+          --link-active-color: {{ Arr::get($site->attributes, 'theme.link_active_color', Arr::get($site->attributes, 'theme.primary_color', '#555555')) }};
+        }
+    </style>
 </head>
-<body class="relative h-full p-0 bg-gray-100 selection:bg-blue-500 selection:text-white">
+<body class="relative h-full p-0 bg-gray-100 selection:bg-primary selection:text-white">
     <div id="mobile-menu" class="transition duration-100 -translate-x-full p-4 pt-8 absolute top-0 left-0 bg-gray-100 w-full z-50">
         <div class="text-right">
             <button
                 id="mobile-close"
                 type="button"
-                class="inline-flex items-center justify-center py-1 px-2 rounded-md text-2xl text-[#004261] hover:text-[#195f80] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#195f80]"
+                class="inline-flex items-center justify-center py-1 px-2 rounded-md text-2xl text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
                 aria-controls="mobile-menu" aria-expanded="true">
                 <span class="sr-only">Close main menu</span>
                 <svg class="w-8 h-8" aria-hidden="true" focusable="false" data-prefix="far" data-icon="times" role="img"
@@ -38,21 +47,21 @@
                         <div>
                             @if (count ($item->subpages) == 0) 
                                 <a
-                                    class="font-sans tracking-wider text-blue-500 hover:text-blue-500 decoration-2 hover:underline hover:underline-offset-8"
+                                    class="font-sans tracking-wider text-primary hover:text-primary decoration-2 hover:underline hover:underline-offset-8"
                                     href="{{ URL::to('/'.$item->slug) }}"
                                 >
                                     <span>{{ $item->title }}</span>
                                 </a>
                             @else
                                 <div class="flex-col relative">
-                                    <a data-id="{{ $item->id }}" class="relative font-sans tracking-wider text-blue-500 hover:text-blue-500 decoration-2 hover:underline hover:underline-offset-8 pr-6" href="javascript:void(0)">
+                                    <a data-id="{{ $item->id }}" class="relative font-sans tracking-wider text-primary hover:text-primary decoration-2 hover:underline hover:underline-offset-8 pr-6" href="javascript:void(0)">
                                         <span>{{ $item->title }}</span>
                                         <i class="absolute right-0 bottom-0 far fa-angle-down transition-all"></i>
                                     </a>
                                     <nav data-submenu="{{ $item->id }}" class="bg-gray-200 grid-rows-auto gap-4 mt-4 p-4 hidden">
                                         @foreach($item->subpages as $second) 
                                             <a
-                                                class="font-sans tracking-wider text-blue-500 hover:text-blue-500 decoration-2 hover:underline hover:underline-offset-8"
+                                                class="font-sans tracking-wider text-primary hover:text-primary decoration-2 hover:underline hover:underline-offset-8"
                                                 href="{{ URL::to('/'.$item->slug.'/'.$second->slug.'/') }}"
                                             >{{ $second->title }}</a>
                                         @endforeach
@@ -65,7 +74,7 @@
 
                 <div class="md:hidden">
                     <a
-                        class="font-sans tracking-wider text-blue-500 hover:text-blue-500 decoration-2 hover:underline hover:underline-offset-8"
+                        class="font-sans tracking-wider text-primary hover:text-primary decoration-2 hover:underline hover:underline-offset-8"
                         href="#"
                     >
                         <span>Client Portal</span>
@@ -84,7 +93,7 @@
                     </a>
 
                     <button id="mobile-open" class="ml-4 md:hidden" type="button" aria-expanded="false">
-                        <svg class="h-8 w-8 text-blue-500 hover:text-blue-400" aria-hidden="true" focusable="false"
+                        <svg class="h-8 w-8 text-primary hover:text-secondary" aria-hidden="true" focusable="false"
                             data-prefix="far" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 448 512" class="svg-inline--fa fa-bars fa-w-14 fa-3x">
                             <path fill="currentColor"

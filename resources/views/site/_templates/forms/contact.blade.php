@@ -12,7 +12,7 @@
                     id="name"
                     name="name"
                     type="text"
-                    class="appearance-none block text-gray-900 border rounded-lg py-3 placeholder-gray-500 placeholder-opacity-75 leading-tight hover:border-blue-500 focus:outline-none focus:border-blue-500 border-gray-400 px-4 w-full"
+                    class="appearance-none block text-gray-900 border rounded-lg py-3 placeholder-gray-500 placeholder-opacity-75 leading-tight hover:border-primary focus:outline-none focus:border-primary border-gray-400 px-4 w-full"
                     autofocus
                 />
                 @if ($errors->has('name'))
@@ -29,7 +29,7 @@
                     id="company"
                     name="company"
                     type="text"
-                    class="appearance-none block text-gray-900 border rounded-lg py-3 placeholder-gray-500 placeholder-opacity-75 leading-tight hover:border-blue-500 focus:outline-none focus:border-blue-500 border-gray-400 px-4 w-full"
+                    class="appearance-none block text-gray-900 border rounded-lg py-3 placeholder-gray-500 placeholder-opacity-75 leading-tight hover:border-primary focus:outline-none focus:border-primary border-gray-400 px-4 w-full"
                 />
             </div>
         </div>
@@ -42,7 +42,7 @@
                     id="cemail"
                     name="cemail"
                     type="email"
-                    class="appearance-none block text-gray-900 border rounded-lg py-3 placeholder-gray-500 placeholder-opacity-75 leading-tight hover:border-blue-500 focus:outline-none focus:border-blue-500 border-gray-400 px-4 w-full"
+                    class="appearance-none block text-gray-900 border rounded-lg py-3 placeholder-gray-500 placeholder-opacity-75 leading-tight hover:border-primary focus:outline-none focus:border-primary border-gray-400 px-4 w-full"
                 />
             </div>
             @if ($errors->has('cemail'))
@@ -58,7 +58,7 @@
                     id="phone"
                     name="phone"
                     type="text"
-                    class="appearance-none block text-gray-900 border rounded-lg py-3 placeholder-gray-500 placeholder-opacity-75 leading-tight hover:border-blue-500 focus:outline-none focus:border-blue-500 border-gray-400 px-4 w-full"
+                    class="appearance-none block text-gray-900 border rounded-lg py-3 placeholder-gray-500 placeholder-opacity-75 leading-tight hover:border-primary focus:outline-none focus:border-primary border-gray-400 px-4 w-full"
                 />
             </div>
         </div>
@@ -70,7 +70,7 @@
                 id="message"
                 name="message"
                 rows="5"
-                class="appearance-none block w-full text-gray-900 border rounded-lg py-3 px-4 placeholder-gray-500 placeholder-opacity-75 leading-tight focus:outline-none focus:border-blue-500 border-gray-400"
+                class="appearance-none block w-full text-gray-900 border rounded-lg py-3 px-4 placeholder-gray-500 placeholder-opacity-75 leading-tight focus:outline-none focus:border-primary border-gray-400"
             ></textarea>
             @if ($errors->has('message'))
                 <p class="text-red-500 text-xs italic mt-1">{{ $errors->first('message') }}</p>
@@ -78,6 +78,6 @@
         </div>
     </div>
     <div class="flex justify-center sm:justify-end mt-3">
-        <button type="submit" class="px-5 py-2.5 bg-blue-500 text-white tracking-wider rounded hover:no-underline hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500">Submit</button>
+        <button type="submit" class="px-5 py-2.5 bg-primary text-white tracking-wider rounded hover:no-underline hover:bg-secondary hover:text-white active:bg-secondary active:text-white focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary">Submit</button>
     </div>
 {{ Form::close() }}

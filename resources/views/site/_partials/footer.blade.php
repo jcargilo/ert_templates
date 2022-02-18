@@ -5,7 +5,7 @@
                 @foreach($nav as $key => $item) 
                     @if ($item->display_in_footer)
                         <li id="{{ $item->slug }}">
-                            <a class="font-sans tracking-wider text-blue-500 decoration-2 hover:underline hover:underline-offset-8"
+                            <a class="font-sans tracking-wider text-primary decoration-2 hover:underline hover:underline-offset-8"
                                 href="{{ URL::to('/'.$item->slug) }}">
                                 <span>{{ $item->title }}</span>
                             </a>
@@ -18,7 +18,7 @@
             <ul class="flex flex-1 justify-center space-x-4 text-lg md:justify-end">
                 @foreach ($social as $link)
                 <li>
-                    <a href="{{ $link->url }}" class="text-blue-500 hover:text-blue-400" target="_blank">
+                    <a href="{{ $link->url }}" class="text-primary hover:text-secondary" target="_blank">
                         <i class="fab fa-{{ $link->class }} text-2xl"></i>
                         <span class="sr-only">Follow us on {{ $link->title }}</span>
                     </a>

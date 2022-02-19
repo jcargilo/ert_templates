@@ -87,10 +87,16 @@
     <div class="flex flex-col">
         <div class="px-6 py-4 bg-white">
             <div class="relative max-w-6xl mx-auto lg:flex">
-                <div class="flex justify-between items-center md:block">
-                    <a href="/" class="flex justify-center min-w-[250px] pb-0 md:pb-4 lg:pb-0">
-                        <img src="/images/static/logo.png" class="max-w-[275px] xl:max-w-[400px]" alt="Forward Accounting">
-                    </a>
+                <div class="flex justify-between items-center md:justify-center">
+                    @if ($site->logo)
+                        <a href="/" class="flex justify-center min-w-[250px] pb-0 md:pb-4 lg:pb-0">
+                            <img src="{{ $site->logo }}" class="max-w-[275px] xl:max-w-[370px]" alt="{{ $site->title }}">
+                        </a>
+                    @else
+                        <div class="bg-gray-100 inline-flex items-center justify-center p-6 rounded-lg max-w-[275px] xl:max-w-[400px]">
+                            <span class="font-bold text-2xl text-primary text-center">{{ $site->title }}</span>
+                        </div>
+                    @endif
 
                     <button id="mobile-open" class="ml-4 md:hidden" type="button" aria-expanded="false">
                         <svg class="h-8 w-8 text-primary hover:text-secondary" aria-hidden="true" focusable="false"

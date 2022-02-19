@@ -1,5 +1,5 @@
-<nav class="flex flex-col justify-between md:flex-1">
-	<div class="hidden md:flex md:justify-end">
+<nav class="flex flex-col justify-between ml-3 md:flex-1">
+	<div class="hidden absolute top-0 right-2 md:flex md:justify-end lg:relative lg:right-0">
 		<a 
 			href="javascript:void"
 			class="button button-sm"
@@ -9,7 +9,7 @@
 		</a>
 	</div>
 
-	<ul class="hidden flex-1 gap-6 md:flex md:justify-center lg:my-4 lg:justify-end xl:gap-8">
+	<ul class="hidden flex-1 md:gap-5 md:flex md:justify-center md:my-4 lg:justify-end lg:gap-6 xl:gap-8">
 	    @foreach($nav as $key => $item) 
 			{{-- // Ignore items that are not set to be displayed in the menu. --}}
 			@if ($item->display_in_menu || (isset($mobile) && $item->display_in_footer))

@@ -311,9 +311,10 @@
                                                 <i class="fa fa-file-image-o"></i>Favicon
                                             </div>
                                             <div class="actions">
-                                                {{ Form::hidden('favicon', null, array('id' => 'fieldID')) }}
-                                                <a href="{{ url(($currentSite->id > 1 ? $currentSite->domain : '') . '/vendor/takeoffdesigngroup/cms/assets/global/plugins/filemanager/dialog.php?type=1&field_id=fieldID&crossdomain=1&akey=' . htmlentities(config('cms.file_manager_access_key'))) }}"
-                                                    class="iframe-btn btn btn-primary btn-sm" type="button"><i class="fa fa-share"></i> Change</a>
+                                                {{ Form::hidden('favicon', null, array('id' => 'favicon')) }}
+                                                <a href="/file-manager/fm-button?id=favicon" class="iframe-btn btn btn-primary">
+                                                    <i class="fa fa-share"></i> Change
+                                                </a>
                                                 @if ($site->favicon)
                                                 <a href="{{ route('sites.removeImage', [$site->id, 'favicon']) }}" class="btn default btn-sm">
                                                     <i class="fa fa-times"></i> Remove
@@ -325,7 +326,9 @@
                                             <p class="text-info">Supply an image exactly 16 x 16 pixels for optimal results.</p>
                                             <div class="text-center">
                                                 <div class="fileinput">
-                                                    <div class="thumbnail"><img id="faviconPreview" src="{{ url($site->favicon ? $site->favicon : '/vendor/takeoffdesigngroup/cms/assets/global/img/noimage.gif') }}" style="width: 16px;height: 16px"></div>
+                                                    <div class="thumbnail">
+                                                        <img id="faviconPreview" src="{{ url()->asset('/vendor/takeoffdesigngroup/cms/assets/global/img/noimage.gif') }}" style="width: 16px;height: 16px">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -337,9 +340,10 @@
                                             <div class="caption">
                                                 <i class="fa fa-file-image-o"></i>Logo </div>
                                             <div class="actions">
-                                                {{ Form::hidden('logo', null, array('id' => 'fieldID2')) }}
-                                                <a href="{{ url(($currentSite->id > 1 ? $currentSite->domain : '') . '/vendor/takeoffdesigngroup/cms/assets/global/plugins/filemanager/dialog.php?type=1&field_id=fieldID2&crossdomain=1&akey=' . htmlentities(config('cms.file_manager_access_key'))) }}"
-                                                    class="iframe-btn btn btn-primary btn-sm" type="button"><i class="fa fa-share"></i> Change</a>
+                                                {{ Form::hidden('logo', null, array('id' => 'logo')) }}
+                                                <a href="/file-manager/fm-button?id=logo" class="iframe-btn btn btn-primary">
+                                                    <i class="fa fa-share"></i> Change
+                                                </a>
                                                 @if ($site->logo)
                                                 <a href="{{ route('sites.removeImage', [$site->id, 'logo']) }}" class="btn default btn-sm">
                                                     <i class="fa fa-times"></i> Remove
@@ -355,7 +359,7 @@
                                             <div class="text-center">
                                                 <div class="fileinput">
                                                     <div class="thumbnail">
-                                                        <img id="logoPreview" class="img-responsive" src="{{ $site->logo ? url()->asset($site->logo) : '/vendor/takeoffdesigngroup/cms/assets/global/img/noimage.gif' }}" alt="">
+                                                        <img id="logoPreview" class="img-responsive" src="{{ url()->asset('/vendor/takeoffdesigngroup/cms/assets/global/img/noimage.gif') }}" alt="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -492,6 +496,7 @@
     <script src="{!! url('/vendor/takeoffdesigngroup/cms/assets/global/plugins/jquery-validation/js/jquery.validate.min.js') !!}" type="text/javascript"></script>
     <script src="{!! url('/vendor/takeoffdesigngroup/cms/assets/global/plugins/jquery-validation/js/additional-methods.min.js') !!}" type="text/javascript"></script>
     <script src="{!! url()->asset('/vendor/takeoffdesigngroup/cms/assets/global/plugins/jquery-minicolors/jquery.minicolors.min.js') !!}" type="text/javascript"></script>
+    <script src="{{ asset('vendor/file-manager/js/file-manager.js') }}"></script>
 
     <script>
         $(function() {
@@ -506,11 +511,11 @@
             @endif
         });
 
-        survey('#fieldID', function() {
-            updateImage('#faviconPreview', $('#fieldID').val());
+        survey('#favicon', function() {
+            updateImage('#faviconPreview', $('#favicon').val());
         });
-        survey('#fieldID2', function() {
-            updateImage('#logoPreview', $('#fieldID2').val())
+        survey('#logo', function() {
+            updateImage('#logoPreview', $('#logo').val())
         });
     </script>
 @stop

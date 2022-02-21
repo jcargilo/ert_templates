@@ -93,9 +93,9 @@
                             <img src="{{ $site->logo }}" class="max-w-[275px] xl:max-w-[370px]" alt="{{ $site->title }}">
                         </a>
                     @else
-                        <div class="bg-gray-100 inline-flex items-center justify-center p-6 rounded-lg max-w-[275px] xl:max-w-[400px]">
+                        <a href="/" class="bg-gray-100 inline-flex items-center justify-center p-6 rounded-lg max-w-[275px] xl:max-w-[400px]">
                             <span class="font-bold text-2xl text-primary text-center">{{ $site->title }}</span>
-                        </div>
+                        </a>
                     @endif
 
                     <button id="mobile-open" class="ml-4 md:hidden" type="button" aria-expanded="false">

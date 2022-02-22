@@ -86,11 +86,11 @@
 
     <div class="flex flex-col">
         <div class="px-6 py-4 bg-white">
-            <div class="relative max-w-6xl mx-auto lg:flex">
+            <div class="relative max-w-6xl mx-auto md:space-y-4 xl:space-y-0 xl:flex">
                 <div class="flex justify-between items-center md:justify-center">
                     @if ($site->logo)
-                        <a href="/" class="flex justify-center min-w-[250px] pb-0 md:pb-4 lg:pb-0">
-                            <img src="{{ $site->logo }}" class="max-w-[275px] xl:max-w-[370px]" alt="{{ $site->title }}">
+                        <a href="/" class="flex justify-center min-w-[250px] pb-0">
+                            <img src="{{ $site->logo }}" class="max-w-[275px] xl:max-w-[330px]" alt="{{ $site->title }}">
                         </a>
                     @else
                         <a href="/" class="bg-gray-100 inline-flex items-center justify-center p-6 rounded-lg max-w-[275px] xl:max-w-[400px]">

@@ -1,5 +1,5 @@
 <template>
-  <li class="mb-0 flex w-full">
+  <div class="mb-0 flex w-full">
     <div class="relative w-full rounded-lg border border-gray-200 bg-white p-3 hover:border-gray-300 hover:shadow-md">
       <div class="absolute top-0 left-0 z-0 h-[62px] w-full rounded-t-lg bg-gradient-to-r from-gray-200 via-gray-300 to-secondary"></div>
 
@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-  </li>
+  </div>
 </template>
 
 <script>

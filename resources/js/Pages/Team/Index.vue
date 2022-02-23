@@ -1,12 +1,12 @@
 <template>
   <section>
-    <div class="max-w-screen-xl space-y-12 px-4 text-center lg:mx-auto xl:px-0">
+    <div class="my-4 max-w-screen-xl space-y-12 text-center sm:px-4 lg:mx-auto xl:px-0">
       <div class="mx-auto max-w-5xl" v-if="team.length > 0">
-        <ul role="list" class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-5">
+        <div class="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 lg:grid-cols-5">
           <template v-for="(member, index) in team">
             <Member :member="member" :key="index" @openBio="openBio" />
           </template>
-        </ul>
+        </div>
       </div>
 
       <p class="rounded-lg bg-white p-12 text-xl text-gray-500 shadow-lg sm:mx-auto sm:max-w-xl" v-else>

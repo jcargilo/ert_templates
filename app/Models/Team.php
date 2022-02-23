@@ -33,15 +33,14 @@ class Team
         });
 
         switch ($template) {
-            case 'team_laa':
-                $this->members = $data['LAAExperts'] ?? [];
-                break;
             case 'team_ppt':
                 $this->members = $data['PPTExperts'] ?? [];
                 break;
             case 'team_vfo':
                 $this->members = $data['VFOExperts'] ?? [];
                 break;
+            default:
+                $this->members = $data['LAAExperts'] ?? [];
         }
 
         // Convert line breaks

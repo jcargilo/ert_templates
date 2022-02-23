@@ -1,1 +1,1 @@
-<team name="{{ $team->name }}" :team="{{ json_encode($team->members) }}"></team>
+<team :team="{{ json_encode($team->members) }}"></team>

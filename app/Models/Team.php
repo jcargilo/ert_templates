@@ -7,7 +7,6 @@ use Cache;
 
 class Team
 {
-    public $name;
     public $members;
 
     public function __construct(String $template)
@@ -34,17 +33,14 @@ class Team
         });
 
         switch ($template) {
-            case 'team_accounting':
+            case 'team_laa':
                 $this->members = $data['LAAExperts'] ?? [];
-                $this->name = 'Accounting Services Team';
                 break;
             case 'team_ppt':
                 $this->members = $data['PPTExperts'] ?? [];
-                $this->name = 'Proactive Planning Team';
                 break;
             case 'team_vfo':
                 $this->members = $data['VFOExperts'] ?? [];
-                $this->name = 'Virtual Family Office';
                 break;
         }
 

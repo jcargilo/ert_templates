@@ -10,7 +10,7 @@
       </div>
 
       <p class="rounded-lg bg-white p-12 text-xl text-gray-500 shadow-lg sm:mx-auto sm:max-w-xl" v-else>
-        No members have been added to the {{ name }}.
+        No members have been added to this team.
       </p>
     </div>
 

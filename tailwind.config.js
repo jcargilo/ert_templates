@@ -6,6 +6,7 @@ module.exports = {
   ],
   safelist: [
     'tracking-tight',
+    'sm:grid-cols-2',
     'md:w-1/2',
     'md:mx-auto',
     'bg-no-repeat',

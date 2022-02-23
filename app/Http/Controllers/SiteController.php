@@ -131,7 +131,7 @@ class SiteController extends SiteBaseController
                     // Load custom functionality
                     switch($column->template->url)
                     {
-                        case 'team_accounting':
+                        case 'team_laa':
                         case 'team_ppt':
                         case 'team_vfo':
                             $team = new Team($column->template->url);

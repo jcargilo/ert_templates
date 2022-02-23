@@ -11,7 +11,7 @@ module.exports = {
     'md:mx-auto',
     'bg-no-repeat',
     'bg-cover',
-    'spacing-y-2',
+    'space-y-2',
     'min-h-[300px]',
     'min-h-[430px]',
     {

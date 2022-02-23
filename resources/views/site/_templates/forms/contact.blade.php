@@ -1,4 +1,4 @@
-{{ Form::open(['id' => 'contact', 'url' => '/contact', 'class' => 'max-w-2xl mx-auto']) }}
+{{ Form::open(['id' => 'contact', 'url' => '/contact', 'class' => 'lg:max-w-2xl lg:mx-auto']) }}
     <p class="hidden">
         <input type="text" name="email"/>
         <input type="text" name="website" />

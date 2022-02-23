@@ -35,7 +35,7 @@ class Team
 
         switch ($template) {
             case 'team_accounting':
-                $this->members = $data['AccountingExperts'] ?? [];
+                $this->members = $data['LAAExperts'] ?? [];
                 $this->name = 'Accounting Services Team';
                 break;
             case 'team_ppt':

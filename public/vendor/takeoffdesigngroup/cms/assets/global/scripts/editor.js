@@ -391,7 +391,7 @@ function getSection() {
   if (sectionEditor.currentSection !== null)
     $.ajax({
       url: '/' + $('#uri').val() + '/pages/getSection',
-      type: 'POST',
+      type: 'GET',
       data: 'sectionId=' + $(sectionEditor.currentSection).attr('data-id'),
       dataType: 'json',
       success: function (data) {
@@ -511,7 +511,7 @@ function getSection() {
 function updateSectionsGrid() {
   $.ajax({
     url: '/' + $('#uri').val() + '/pages/getSections',
-    type: 'POST',
+    type: 'GET',
     dataType: 'json',
     success: function (data) {
       if (data.length != null && data.length > 0) {
@@ -748,7 +748,7 @@ function show_submenu_options() {
   else {
     $.ajax({
       url: '/' + $('#uri').val() + '/pages/hasSubpages',
-      type: 'POST',
+      type: 'GET',
       data: $('#page_id').serialize(),
       dataType: 'json',
       success: function (data) {
@@ -764,7 +764,7 @@ function get_pages_base_url() {
   if ($('#page_id').val() > 0)
     $.ajax({
       url: '/' + $('#uri').val() + '/pages/getPageBaseUrl',
-      type: 'POST',
+      type: 'GET',
       data: $('#page_id').serialize(),
       dataType: 'json',
       success: function (data) {

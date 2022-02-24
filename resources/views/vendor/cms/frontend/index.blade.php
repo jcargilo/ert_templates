@@ -1,14 +1,6 @@
 @extends((isset($subfolder) ? $subfolder : 'site') . '.index')
 
 @section('content')
-	@if ($page->slug === 'planning-process')
-		<div class="max-w-6xl mx-auto flex justify-end mt-4 px-4">
-			<a href="https://ffo.biz-diagnostic.com" class="button" target="_blank">
-				Proactive Planning Platform <i class="fas fa-external-link ml-2"></i>
-			</a>
-		</div>
-	@endif
-
 	@if (count($page->sections) > 0)
 		@foreach ($page->sections as $key => $section)
 			<section id="row-{!! $key !!}" class="{!! $section->class !!}{{ $section->classes ? " {$section->classes}" : '' }}" style="{{ $section->style }}">

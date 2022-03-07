@@ -15,6 +15,10 @@ module.exports = {
     'min-h-[300px]',
     'min-h-[430px]',
     {
+      pattern: /grayscale|grayscale-0/,
+      variants: ['hover'],
+    },
+    {
       pattern: /font-(light|normal|semibold|bold|extrabold)/,
     },
     {

@@ -14,10 +14,8 @@ module.exports = {
     'space-y-2',
     'min-h-[300px]',
     'min-h-[430px]',
-    {
-      pattern: /grayscale|grayscale-0/,
-      variants: ['group-hover'],
-    },
+    'grayscale',
+    'group-hover:grayscale-0',
     {
       pattern: /font-(light|normal|semibold|bold|extrabold)/,
     },

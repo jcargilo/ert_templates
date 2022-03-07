@@ -105,18 +105,38 @@
                                         <span class="text-info small"> To add multiple email addresses, separate each address with a comma. </span>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="show_coming_soon">Show Coming Soon Page</label>
-                                        <div class="validate">
-                                            {{ Form::hidden('show_coming_soon', 0) }}
-                                            {{ Form::checkbox('show_coming_soon', 1, NULL, [
-                                                'id' => 'show_coming_soon',
-                                                'class' => 'make-switch',
-                                                'data-on-text' => 'Yes',
-                                                'data-on-color' => 'success',
-                                                'data-off-text' => 'No',
-                                                'data-size' => 'small'
-                                                ]) }}
+                                    <div class="mt-10 space-y-6">
+                                        <div class="flex items-center justify-between">
+                                            <label for="show_coming_soon">Show Coming Soon Page</label>
+                                            <div class="validate">
+                                                {{ Form::hidden('show_coming_soon', 0) }}
+                                                {{ Form::checkbox('show_coming_soon', 1, NULL, [
+                                                    'id' => 'show_coming_soon',
+                                                    'class' => 'make-switch',
+                                                    'data-on-text' => 'Yes',
+                                                    'data-on-color' => 'success',
+                                                    'data-off-text' => 'No',
+                                                    'data-size' => 'small'
+                                                    ]) }}
+                                            </div>
+                                        </div>
+
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <label class="block mb-0" for="cache_data">Cache API Data for 1 hour</label>
+                                                <span class="text-info small">When enabled, the site will only refresh the API-fetched data once per hour.</span>
+                                            </div>
+                                            <div class="validate">
+                                                {{ Form::hidden('cache_data', 0) }}
+                                                {{ Form::checkbox('cache_data', 1, NULL, [
+                                                    'id' => 'cache_data',
+                                                    'class' => 'make-switch',
+                                                    'data-on-text' => 'Yes',
+                                                    'data-on-color' => 'success',
+                                                    'data-off-text' => 'No',
+                                                    'data-size' => 'small'
+                                                    ]) }}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -138,10 +158,10 @@
                                 </div>
                             </div>
 
-                            <hr>
-
-                            <button class="btn btn-success" data-action="continue"><i class="fa fa-check"></i> Save Changes</button>
-                            <a href="{{ route('sites.index') }}" class="btn btn-secondary-outline default" name="reset" value="reset">Cancel</a>
+                            <div class="flex justify-end gap-3">
+                                <a href="{{ route('sites.index') }}" class="btn btn-secondary-outline default" name="reset" value="reset">Cancel</a>
+                                <button class="btn btn-success" data-action="continue"><i class="fa fa-check"></i> Save Changes</button>
+                            </div>
                         </div>
                     </div>
                 </div>

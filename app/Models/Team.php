@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Support\Facades\Http;
+use TakeoffDesignGroup\CMS\Models\Sites\Site;
 use Cache;
 
 class Team
@@ -16,7 +17,9 @@ class Team
 
     protected function getTeamFromAPI(String $template) : void
     {
-        if (auth()->check()) {
+        $site = cache('site') ?? Site::find(1);
+        
+        if ((!$site->cache_data ?? false) || auth()->check()) {
             Cache::forget('team');
         }
 

@@ -48,7 +48,7 @@ return [
 	 *
 	 * @type string
 	 */
-	'login_logo' => '/assets/images/logo.png',
+	'login_logo' => '/storage/files/logo.png',
 
 	/**
 	 * Default adminbar icon

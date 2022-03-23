@@ -23,10 +23,12 @@ class Team
             Cache::forget('team');
         }
 
-        $data = Cache::remember('team', 3600, function () {
+        $data = Cache::remember('team', 3600, function () use ($site) {
+            $domain = $site->attributes['biz_domain'] ?? 'https://biz-diagnostic.com';
+
             $response = Http::withHeaders([
                 'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSGF5ZGVuUm9jayIsImF1dGgiOiJkOTNsYWRmaGo5MSRmam0ifQ.r3M517FO5ezm4UGDV5zldOVEfQg7mBfEKqPzlUNLoak',
-            ])->get('https://ffo.biz-diagnostic.com/api/Expert/All');
+            ])->get("{$domain}/api/Expert/All");
 
             if ($response->successful()) {
                 return $response->json();

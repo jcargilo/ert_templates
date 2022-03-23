@@ -100,6 +100,11 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="attributes[biz_domain]" class="control-label">Biz-Diagnostic Domain:<span class="required"> * </span></label>
+                                        <div class="validate">{{ Form::text('attributes[biz_domain]', NULL, array('class' => 'form-control', 'placeholder' => 'https://mysite.biz-diagnostic.com')) }}</div>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="email" class="control-label">Email Address(es):<span class="required"> * </span></label>
                                         <div class="validate">{{ Form::text('email', NULL, array('class' => 'form-control', 'placeholder' => 'http://www.mysite.com')) }}</div>
                                         <span class="text-info small"> To add multiple email addresses, separate each address with a comma. </span>

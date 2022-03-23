@@ -19,7 +19,7 @@
             </p>
             <a
               href="https://lindsay.oureliteexperience.com/UEPW0001"
-              class="text-lg font-semibold text-link hover:text-link-hover sm:text-xl active:text-link-active"
+              class="text-lg sm:text-xl"
               target="_blank"
             >
               Understanding Estate Planning
@@ -39,7 +39,7 @@
         </p>
         <a
           href="https://lindsay.oureliteexperience.com/UEPW0001"
-          class="text-lg font-semibold text-link hover:text-link-hover sm:text-xl active:text-link-active"
+          class="text-lg sm:text-xl"
           target="_blank"
         >
           Maximizing Advanced Tax Planning
@@ -55,7 +55,7 @@
         </p>
         <a
           href="https://lindsay.oureliteexperience.com/UEPW0001"
-          class="text-lg font-semibold text-link hover:text-link-hover sm:text-xl active:text-link-active"
+          class="text-lg sm:text-xl"
           target="_blank"
         >
           Placeholder Event Title

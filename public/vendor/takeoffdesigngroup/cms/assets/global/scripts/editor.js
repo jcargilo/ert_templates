@@ -226,13 +226,14 @@ $('#sectionEditor').on('show.bs.modal', function () {
           if (e && e.element.nodeName.toLowerCase() == 'img') {
             tinyMCE.DOM.setAttribs(e.element, { width: null, height: null })
           }
+
+          getSection()
         })
       })
     },
 
     file_picker_types: 'image',
     file_picker_callback(callback, value, meta) {
-      console.log('callback')
       let x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth
       let y = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight
 
@@ -255,10 +256,6 @@ $('#sectionEditor').on('show.bs.modal', function () {
   tinyMCE.execCommand('mceAddEditor', false, 'content_5')
 
   window.scrollTo(0, 0)
-
-  setTimeout(function () {
-    getSection()
-  }, 200)
 })
 
 $('#sectionEditor').on('shown.bs.modal', function () {
@@ -468,7 +465,9 @@ function getSection() {
               .prop('checked', true)
               .parent('label')
               .toggleClass('active', true)
+
             tinyMCE.get('content_' + column.column).setContent(column.content)
+
             option = 'editor'
           }
 

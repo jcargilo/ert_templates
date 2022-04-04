@@ -226,8 +226,6 @@ $('#sectionEditor').on('show.bs.modal', function () {
           if (e && e.element.nodeName.toLowerCase() == 'img') {
             tinyMCE.DOM.setAttribs(e.element, { width: null, height: null })
           }
-
-          getSection()
         })
       })
     },
@@ -249,11 +247,7 @@ $('#sectionEditor').on('show.bs.modal', function () {
     },
   }
 
-  tinyMCE.execCommand('mceAddEditor', false, 'content_1')
-  tinyMCE.execCommand('mceAddEditor', false, 'content_2')
-  tinyMCE.execCommand('mceAddEditor', false, 'content_3')
-  tinyMCE.execCommand('mceAddEditor', false, 'content_4')
-  tinyMCE.execCommand('mceAddEditor', false, 'content_5')
+  getSection()
 
   window.scrollTo(0, 0)
 })
@@ -466,7 +460,8 @@ function getSection() {
               .parent('label')
               .toggleClass('active', true)
 
-            tinyMCE.get('content_' + column.column).setContent(column.content)
+            $(`#content_${column.column}`).val(column.content)
+            tinyMCE.execCommand('mceAddEditor', false, `content_${column.column}`)
 
             option = 'editor'
           }
@@ -868,7 +863,6 @@ function initTinyMCE(crossDomain, baseUrl) {
 
     file_picker_types: 'image',
     file_picker_callback(callback, value, meta) {
-      console.log('callback')
       let x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth
       let y = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight
 
@@ -957,7 +951,6 @@ function initTinyMCE(crossDomain, baseUrl) {
 
     file_picker_types: 'image',
     file_picker_callback(callback, value, meta) {
-      console.log('callback')
       let x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth
       let y = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight
 
@@ -1040,7 +1033,6 @@ function initTinyMCE(crossDomain, baseUrl) {
 
     file_picker_types: 'image',
     file_picker_callback(callback, value, meta) {
-      console.log('callback')
       let x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth
       let y = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight
 

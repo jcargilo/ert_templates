@@ -298,11 +298,12 @@ function updateSection() {
     boxed: true,
   })
 
-  tinyMCE.get('content_1').save()
-  tinyMCE.get('content_2').save()
-  tinyMCE.get('content_3').save()
-  tinyMCE.get('content_4').save()
-  tinyMCE.get('content_5').save()
+  for (let i = 1; i <= 5; i++) {
+    let tiny = tinyMCE.get(`content_${i}`);
+    if (tiny != undefined) {
+      tiny.save()
+    }
+  }
 
   $.ajax({
     url: '/' + $('#uri').val() + '/pages/updateSection',
@@ -379,7 +380,7 @@ function deleteSection(e) {
 }
 
 function getSection() {
-  if (sectionEditor.currentSection !== null)
+  if (sectionEditor.currentSection !== null) {
     $.ajax({
       url: '/' + $('#uri').val() + '/pages/getSection',
       type: 'GET',
@@ -460,11 +461,11 @@ function getSection() {
               .parent('label')
               .toggleClass('active', true)
 
-            $(`#content_${column.column}`).val(column.content)
-            tinyMCE.execCommand('mceAddEditor', false, `content_${column.column}`)
-
             option = 'editor'
           }
+
+          $(`#content_${column.column}`).val(column.content)
+          tinyMCE.execCommand('mceAddEditor', false, `content_${column.column}`)
 
           if (column.metadata) {
             $(`[name="column_classes_mobile_${column.column}"]`).val(JSON.stringify(column.metadata.mobile))
@@ -499,7 +500,11 @@ function getSection() {
       },
       error: function ($response) {},
     })
-  else App.stopPageLoading()
+  } else {
+    initTinyMCE()
+  }
+  
+  App.stopPageLoading()
 }
 
 function updateSectionsGrid() {
@@ -557,11 +562,13 @@ function resetSectionForm() {
   showContentAreas()
   $('.picker').removeAttr('style').val('')
   if (tinyMCE != undefined && tinyMCE.activeEditor != undefined) {
-    tinyMCE.get('content_1').setContent('')
-    tinyMCE.get('content_2').setContent('')
-    tinyMCE.get('content_3').setContent('')
-    tinyMCE.get('content_4').setContent('')
-    tinyMCE.get('content_5').setContent('')
+    for (let i = 1; i <= 5; i++) {
+      let tiny = tinyMCE.get(`content_${i}`);
+      if (tiny != undefined) {
+        tiny.setContent('')
+      }
+    }
+    
     $('#background_image').val('')
     $('#section_background_color').val('')
   }
@@ -1016,7 +1023,7 @@ function initTinyMCE(crossDomain, baseUrl) {
     browser_spellcheck: true,
     forced_root_block: 'p', // Set to false to disable.
     convert_urls: 0, // disables converting urls from absolute to relative
-    extended_valid_elements: 'i[*],svg[*],defs[*],style[*],path[*]',
+    valid_elements: '*[*]',
     /* fontselect
         font_formats : "Oswald=oswald;"+
             "Cambo=cambo",*/

@@ -43,18 +43,20 @@ class EventsAPI
         }
 
         $this->events = Cache::remember('events', 3600, function () use ($site) {
-            $url = $site->attributes['events_api_link'] ?? 'https://app.elitemarketingplatform.com/v1/events?email=lindsay.czajka@gmail.com&key=93bfaa8b-8862-404d-b3c0-26614ba2f906';
-            $response = Http::get($url);
+            $url = $site->attributes['events_api_link'] ?? '';
+            if ($url) {
+                $response = Http::get($url);
 
-            if ($response->successful()) {
-                $data = $response->json()['data'] ?? [];
+                if ($response->successful()) {
+                    $data = $response->json()['data'] ?? [];
 
-                $events = new Collection;
-                foreach ($data as $item) {
-                    $events->push(new Event($item));
+                    $events = new Collection;
+                    foreach ($data as $item) {
+                        $events->push(new Event($item));
+                    }
+
+                    return $events;
                 }
-
-                return $events;
             }
 
             return [];

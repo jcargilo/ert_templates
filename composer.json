@@ -1,9 +1,7 @@
 {
-    "name": "jcargilo/hopescookies",
+    "name": "jcargilo/ert_templates",
     "type": "project",
-	"description": "http://www.hopescookies.com/",
-	"keywords": ["website", "hopes", "cookies"],
-	"homepage": "https://www.hopescookies.com/",
+	"homepage": "https://www.forward-accountancy.com/",
     "license": "MIT",
 	"repositories": [
         { "type": "git", "url": "https://github.com/jcargilo/cms.git" }

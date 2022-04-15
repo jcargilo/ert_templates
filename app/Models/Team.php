@@ -23,20 +23,23 @@ class Team
             Cache::forget('team');
         }
 
-        $data = Cache::remember('team', 3600, function () use ($site) {
-            $domain = $site->attributes['biz_domain'] ?? '';
-            if ($domain) {
-                $response = Http::withHeaders([
-                    'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSGF5ZGVuUm9jayIsImF1dGgiOiJkOTNsYWRmaGo5MSRmam0ifQ.r3M517FO5ezm4UGDV5zldOVEfQg7mBfEKqPzlUNLoak',
-                ])->get("{$domain}/api/Expert/All");
+        $domain = $site->attributes['biz_domain'] ?: 'https://spencervfo.biz-diagnostic.com';
+        $data = [];
+        
+        if ($domain) {
+            try {
+                $data = Cache::remember('team', 3600, function () use ($site) {
+                    logger('cached');
+                    $response = Http::withHeaders([
+                        'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSGF5ZGVuUm9jayIsImF1dGgiOiJkOTNsYWRmaGo5MSRmam0ifQ.r3M517FO5ezm4UGDV5zldOVEfQg7mBfEKqPzlUNLoak',
+                    ])->get("{$domain}/api/Expert/All");
 
-                if ($response->successful()) {
-                    return $response->json();
-                }
-            }
-
-            return [];
-        });
+                    if ($response->successful()) {
+                        return $response->json();     
+                    }
+                });
+            } catch (\Exception $exception) {}
+        }
 
         switch ($template) {
             case 'team_ppt':

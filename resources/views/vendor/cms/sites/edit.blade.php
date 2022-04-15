@@ -105,6 +105,11 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="attributes[events_api_link]" class="control-label">Elite Marketing Events API Link:<span class="required"> * </span></label>
+                                        <div class="validate">{{ Form::text('attributes[events_api_link]', NULL, array('class' => 'form-control', 'placeholder' => 'https://app.elitemarketingplatform.com/v1/events')) }}</div>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="email" class="control-label">Email Address(es):<span class="required"> * </span></label>
                                         <div class="validate">{{ Form::text('email', NULL, array('class' => 'form-control', 'placeholder' => 'http://www.mysite.com')) }}</div>
                                         <span class="text-info small"> To add multiple email addresses, separate each address with a comma. </span>

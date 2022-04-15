@@ -90,7 +90,7 @@
                 <div class="flex justify-between items-center md:justify-center">
                     @if ($site->logo)
                         <a href="/" class="flex justify-center min-w-[250px] pb-0">
-                            <img src="{{ $site->logo }}" class="max-w-[275px] xl:max-w-[330px]" alt="{{ $site->title }}">
+                            <img src="{{ $site->logo }}" class="max-w-[275px] max-h-[75px] xl:max-w-[330px]" alt="{{ $site->title }}">
                         </a>
                     @else
                         <a href="/" class="bg-gray-100 inline-flex items-center justify-center p-6 rounded-lg max-w-[275px] xl:max-w-[400px]">

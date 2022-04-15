@@ -43,6 +43,8 @@ class EventsAPI
         }
 
         $this->events = Cache::remember('events', 3600, function () use ($site) {
+            $events = new Collection;
+            
             $url = $site->attributes['events_api_link'] ?? '';
             if ($url) {
                 $response = Http::get($url);
@@ -50,16 +52,13 @@ class EventsAPI
                 if ($response->successful()) {
                     $data = $response->json()['data'] ?? [];
 
-                    $events = new Collection;
                     foreach ($data as $item) {
                         $events->push(new Event($item));
                     }
-
-                    return $events;
                 }
             }
 
-            return [];
+            return $events;
         });
     }
 }

@@ -44,10 +44,10 @@
                     type="email"
                     class="appearance-none block text-gray-900 border rounded-lg py-3 placeholder-gray-500 placeholder-opacity-75 leading-tight hover:border-primary focus:outline-none focus:border-primary border-gray-400 px-4 w-full"
                 />
+                @if ($errors->has('cemail'))
+                    <p class="text-red-500 text-xs italic mt-1">{{ $errors->first('cemail') }}</p>
+                @endif
             </div>
-            @if ($errors->has('cemail'))
-                <p class="text-red-500 text-xs italic mt-1">{{ $errors->first('cemail') }}</p>
-            @endif
         </div>
         <div class="w-full md:w-1/2 md:px-2">
             <div class="relative mb-3">

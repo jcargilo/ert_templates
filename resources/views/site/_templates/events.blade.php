@@ -18,7 +18,7 @@
 
     @if ($path !== 'events')
       <div class="mt-6 flex justify-center">
-        <a href="/events" class="button">
+        <a href="/events" class="button bg-button-bg text-button-text hover:bg-button-hover-bg hover:text-button-hover-text active:bg-button-active-bg active:text-button-active-text focus:ring-2 focus:ring-offset-2 focus:ring-button-ring">
           See More Events
         </a>
       </div>

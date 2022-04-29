@@ -187,54 +187,150 @@
                             </div>
                         </div>
                         <div class="portlet-body">
-                            <div class="flex flex-col items-center mb-6 border-b border-gray-200 gap-6 pb-6">
-                                <div class="gap-6 items-center justify-between sm:flex sm:w-1/2">
-                                    <label for="primary_color" class="flex-1 control-label">Primary Color:</label>
-                                    <div class="w-64 relative">
-                                        {{ Form::text('attributes[theme][primary_color]', $site->attributes['theme']['primary_color'] ?? '#555555', [
-                                            "id" => "primary_color",
-                                            "class" => "form-control colorpicker",
-                                        ]) }}
+                            <div class="mb-6 border-b border-gray-200">
+                                <div class="mb-6 space-y-3">
+                                    <div class="gap-6 items-center justify-between sm:flex sm:w-1/2">
+                                        <label for="primary_color" class="flex-1 control-label">Primary Color:</label>
+                                        <div class="w-48 relative">
+                                            {{ Form::text('attributes[theme][primary_color]', $site->attributes['theme']['primary_color'] ?? '#555555', [
+                                                "id" => "primary_color",
+                                                "class" => "form-control colorpicker",
+                                            ]) }}
+                                        </div>
+                                    </div>
+
+                                    <div class="gap-6 items-center justify-between sm:flex sm:w-1/2">
+                                        <label for="secondary_color" class="flex-1 control-label">Secondary Color:</label>
+                                        <div class="w-48 relative">
+                                            {{ Form::text('attributes[theme][secondary_color]', $site->attributes['theme']['secondary_color'] ?? '#888888', [
+                                                "id" => "secondary_color",
+                                                "class" => "form-control colorpicker",
+                                            ]) }}
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="gap-6 items-center justify-between sm:flex sm:w-1/2">
-                                    <label for="secondary_color" class="flex-1 control-label">Secondary Color:</label>
-                                    <div class="w-64 relative">
-                                        {{ Form::text('attributes[theme][secondary_color]', $site->attributes['theme']['secondary_color'] ?? '#888888', [
-                                            "id" => "secondary_color",
-                                            "class" => "form-control colorpicker",
-                                        ]) }}
-                                    </div>
-                                </div>
+                                <div class="sm:flex sm:gap-10">
+                                    <div class="sm:w-1/2">
+                                        <div class="portlet">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    Links
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body space-y-3">
+                                                <div class="gap-6 items-center justify-between sm:flex">
+                                                    <label for="link_color" class="flex-1 control-label">Link Color:</label>
+                                                    <div class="w-48 relative">
+                                                        {{ Form::text('attributes[theme][link_color]', $site->attributes['theme']['link_color'] ?? ($site->attributes['theme']['primary_color'] ?? '#555555'), [
+                                                            "id" => "link_color",
+                                                            "class" => "form-control colorpicker",
+                                                        ]) }}
+                                                    </div>
+                                                </div>
 
-                                <div class="gap-6 items-center justify-between sm:flex sm:w-1/2">
-                                    <label for="link_color" class="flex-1 control-label">Link Color:</label>
-                                    <div class="w-64 relative">
-                                        {{ Form::text('attributes[theme][link_color]', $site->attributes['theme']['link_color'] ?? ($site->attributes['theme']['primary_color'] ?? '#555555'), [
-                                            "id" => "link_color",
-                                            "class" => "form-control colorpicker",
-                                        ]) }}
-                                    </div>
-                                </div>
+                                                <div class="gap-6 items-center justify-between sm:flex">
+                                                    <label for="link_hover_color" class="flex-1 control-label">Link Hover Color:</label>
+                                                    <div class="w-48 relative">
+                                                        {{ Form::text('attributes[theme][link_hover_color]', $site->attributes['theme']['link_hover_color'] ?? ($site->attributes['theme']['secondary_color'] ?? '#888888'), [
+                                                            "id" => "link_hover_color",
+                                                            "class" => "form-control colorpicker",
+                                                        ]) }}
+                                                    </div>
+                                                </div>
 
-                                <div class="gap-6 items-center justify-between sm:flex sm:w-1/2">
-                                    <label for="link_hover_color" class="flex-1 control-label">Link Hover Color:</label>
-                                    <div class="w-64 relative">
-                                        {{ Form::text('attributes[theme][link_hover_color]', $site->attributes['theme']['link_hover_color'] ?? ($site->attributes['theme']['secondary_color'] ?? '#888888'), [
-                                            "id" => "link_hover_color",
-                                            "class" => "form-control colorpicker",
-                                        ]) }}
+                                                <div class="gap-6 items-center justify-between sm:flex">
+                                                    <label for="link_active_color" class="flex-1 control-label">Link Active Color:</label>
+                                                    <div class="w-48 relative">
+                                                        {{ Form::text('attributes[theme][link_active_color]', $site->attributes['theme']['link_active_color'] ?? ($site->attributes['theme']['primary_color'] ?? '#555555'), [
+                                                            "id" => "link_active_color",
+                                                            "class" => "form-control colorpicker",
+                                                        ]) }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="gap-6 items-center justify-between sm:flex sm:w-1/2">
-                                    <label for="link_active_color" class="flex-1 control-label">Link Active Color:</label>
-                                    <div class="w-64 relative">
-                                        {{ Form::text('attributes[theme][link_active_color]', $site->attributes['theme']['link_active_color'] ?? ($site->attributes['theme']['primary_color'] ?? '#555555'), [
-                                            "id" => "link_active_color",
-                                            "class" => "form-control colorpicker",
-                                        ]) }}
+                                    <div class="sm:w-1/2">
+                                        <div class="portlet">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    Buttons
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body space-y-3">
+                                                <div class="gap-6 items-center justify-between sm:flex">
+                                                    <label for="button_bg_color" class="flex-1 control-label">Background Color:</label>
+                                                    <div class="w-48 relative">
+                                                        {{ Form::text('attributes[theme][button_bg_color]', $site->attributes['theme']['button_bg_color'] ?? ($site->attributes['theme']['primary_color'] ?? '#888888'), [
+                                                            "id" => "button_bg_color",
+                                                            "class" => "form-control colorpicker",
+                                                        ]) }}
+                                                    </div>
+                                                </div>
+
+                                                <div class="gap-6 items-center justify-between sm:flex">
+                                                    <label for="button_text_color" class="flex-1 control-label">Text Color:</label>
+                                                    <div class="w-48 relative">
+                                                        {{ Form::text('attributes[theme][button_text_color]', $site->attributes['theme']['button_text_color'] ?? '#ffffff', [
+                                                            "id" => "button_text_color",
+                                                            "class" => "form-control colorpicker",
+                                                        ]) }}
+                                                    </div>
+                                                </div>
+
+                                                <div class="gap-6 items-center justify-between sm:flex">
+                                                    <label for="button_hover_bg_color" class="flex-1 control-label">Hover Background Color:</label>
+                                                    <div class="w-48 relative">
+                                                        {{ Form::text('attributes[theme][button_hover_bg_color]', $site->attributes['theme']['button_hover_bg_color'] ?? ($site->attributes['theme']['secondary_color'] ?? '#555555'), [
+                                                            "id" => "button_hover_bg_color",
+                                                            "class" => "form-control colorpicker",
+                                                        ]) }}
+                                                    </div>
+                                                </div>
+
+                                                <div class="gap-6 items-center justify-between sm:flex">
+                                                    <label for="button_hover_text_color" class="flex-1 control-label">Hover Text Color:</label>
+                                                    <div class="w-48 relative">
+                                                        {{ Form::text('attributes[theme][button_hover_text_color]', $site->attributes['theme']['button_hover_text_color'] ?? '#ffffff', [
+                                                            "id" => "button_hover_text_color",
+                                                            "class" => "form-control colorpicker",
+                                                        ]) }}
+                                                    </div>
+                                                </div>
+
+                                                <div class="gap-6 items-center justify-between sm:flex">
+                                                    <label for="button_active_bg_color" class="flex-1 control-label">Active Background Color:</label>
+                                                    <div class="w-48 relative">
+                                                        {{ Form::text('attributes[theme][button_active_bg_color]', $site->attributes['theme']['button_active_bg_color'] ?? ($site->attributes['theme']['secondary_color'] ?? '#555555'), [
+                                                            "id" => "button_active_bg_color",
+                                                            "class" => "form-control colorpicker",
+                                                        ]) }}
+                                                    </div>
+                                                </div>
+
+                                                <div class="gap-6 items-center justify-between sm:flex">
+                                                    <label for="button_active_text_color" class="flex-1 control-label">Active Text Color:</label>
+                                                    <div class="w-48 relative">
+                                                        {{ Form::text('attributes[theme][button_active_text_color]', $site->attributes['theme']['button_active_text_color'] ?? '#ffffff', [
+                                                            "id" => "button_active_text_color",
+                                                            "class" => "form-control colorpicker",
+                                                        ]) }}
+                                                    </div>
+                                                </div>
+
+                                                <div class="gap-6 items-center justify-between sm:flex">
+                                                    <label for="button_focus_ring_color" class="flex-1 control-label">Focus Ring Color:</label>
+                                                    <div class="w-48 relative">
+                                                        {{ Form::text('attributes[theme][button_focus_ring_color]', $site->attributes['theme']['button_focus_ring_color'] ?? ($site->attributes['theme']['secondary_color'] ?? '#555555'), [
+                                                            "id" => "button_focus_ring_color",
+                                                            "class" => "form-control colorpicker",
+                                                        ]) }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

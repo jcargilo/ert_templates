@@ -20,6 +20,21 @@ module.exports = {
       pattern: /font-(light|normal|semibold|bold|extrabold)/,
     },
     {
+      pattern: /button-(bg|text)/,
+    },
+    {
+      pattern: /button-(hover-bg|hover-text)/,
+      variants: ['hover'],
+    },
+    {
+      pattern: /button-(active-bg|active-text)/,
+      variants: ['active'],
+    },
+    {
+      pattern: /button-ring/,
+      variants: ['focus'],
+    },
+    {
       pattern: /flex-(20|25|33|40|50|60|66|75|80|100)/,
       variants: ['sm', 'lg', 'xl'],
     },
@@ -56,6 +71,13 @@ module.exports = {
         link: 'var(--link-color)',
         'link-hover': 'var(--link-hover-color)',
         'link-active': 'var(--link-active-color)',
+        'button-bg': 'var(--button-bg-color)',
+        'button-text': 'var(--button-text-color)',
+        'button-hover-bg': 'var(--button-hover-bg-color)',
+        'button-hover-text': 'var(--button-hover-text-color)',
+        'button-active-bg': 'var(--button-active-bg-color)',
+        'button-active-text': 'var(--button-active-text-color)',
+        'button-ring': 'var(--button-ring-color)',
       },
       flex: {
         20: '0 1 calc(20% - (1.5rem * 2))',

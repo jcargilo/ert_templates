@@ -12,7 +12,7 @@
         </div>
 
         <div>
-          <button class="w-full" aria-label="Bio" @click="$emit('openBio', member)">
+          <button class="w-full button bg-button-bg text-button-text hover:bg-button-hover-bg hover:text-button-hover-text active:bg-button-active-bg active:text-button-active-text focus:ring-2 focus:ring-offset-2 focus:ring-button-ring" aria-label="Bio" @click="$emit('openBio', member)">
             <span class="font-medium">Bio</span>
           </button>
         </div>

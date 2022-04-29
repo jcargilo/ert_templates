@@ -18,6 +18,13 @@
           --link-color: {{ Arr::get($site->attributes, 'theme.link_color', Arr::get($site->attributes, 'theme.primary_color', '#555555') ) }};
           --link-hover-color: {{ Arr::get($site->attributes, 'theme.link_hover_color', Arr::get($site->attributes, 'theme.secondary_color', '#888888')) }};
           --link-active-color: {{ Arr::get($site->attributes, 'theme.link_active_color', Arr::get($site->attributes, 'theme.primary_color', '#555555')) }};
+          --button-bg-color: {{ Arr::get($site->attributes, 'theme.button_bg_color', Arr::get($site->attributes, 'theme.primary_color', '#555555') ) }};
+          --button-text-color: {{ Arr::get($site->attributes, 'theme.button_text_color', '#ffffff') }};
+          --button-hover-bg-color: {{ Arr::get($site->attributes, 'theme.button_hover_bg_color', Arr::get($site->attributes, 'theme.secondary_color', '#888888') ) }};
+          --button-hover-text-color: {{ Arr::get($site->attributes, 'theme.button_hover_text_color', '#ffffff') }};
+          --button-active-bg-color: {{ Arr::get($site->attributes, 'theme.button_active_bg_color', Arr::get($site->attributes, 'theme.secondary_color', '#888888') ) }};
+          --button-active-text-color: {{ Arr::get($site->attributes, 'theme.button_active_text_color', '#ffffff') }};
+          --button-ring-color: {{ Arr::get($site->attributes, 'theme.button_ring_color', Arr::get($site->attributes, 'theme.secondary_color', '#888888') ) }};
         }
     </style>
 </head>

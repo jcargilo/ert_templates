@@ -78,6 +78,6 @@
         </div>
     </div>
     <div class="flex justify-center sm:justify-end mt-3">
-        <button type="submit" class="button">Submit</button>
+        <button type="submit" class="button bg-button-bg text-button-text hover:bg-button-hover-bg hover:text-button-hover-text active:bg-button-active-bg active:text-button-active-text focus:ring-2 focus:ring-offset-2 focus:ring-button-ring">Submit</button>
     </div>
 {{ Form::close() }}

@@ -33,7 +33,7 @@ a {
 
 .content-block button,
 .button {
-  @apply inline-block rounded tracking-wider;
+  @apply inline-block rounded tracking-wider no-underline;
 
   &.button-sm {
     @apply px-3 py-1.5;
@@ -42,28 +42,10 @@ a {
     @apply px-4 py-3;
   }
 
-  &.button-reversed {
-    @apply bg-white text-primary;
-
-    &:focus {
-      @apply ring-white;
-    }
-  }
-  &:not(.button-reversed) {
-    @apply bg-primary text-sm text-white;
-
-    &:focus {
-      @apply ring-primary ring-offset-1;
-    }
-  }
-
   &:hover {
-    @apply bg-secondary text-white no-underline;
+    @apply no-underline;
   }
   &:focus {
-    @apply outline-none ring-2;
-  }
-  &:active {
-    @apply bg-link-active text-white;
+    @apply outline-none;
   }
 }

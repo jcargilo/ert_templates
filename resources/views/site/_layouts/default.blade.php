@@ -24,7 +24,7 @@
           --button-hover-text-color: {{ Arr::get($site->attributes, 'theme.button_hover_text_color', '#ffffff') }};
           --button-active-bg-color: {{ Arr::get($site->attributes, 'theme.button_active_bg_color', Arr::get($site->attributes, 'theme.secondary_color', '#888888') ) }};
           --button-active-text-color: {{ Arr::get($site->attributes, 'theme.button_active_text_color', '#ffffff') }};
-          --button-ring-color: {{ Arr::get($site->attributes, 'theme.button_ring_color', Arr::get($site->attributes, 'theme.secondary_color', '#888888') ) }};
+          --button-ring-color: {{ Arr::get($site->attributes, 'theme.button_focus_ring_color', Arr::get($site->attributes, 'theme.secondary_color', '#888888') ) }};
         }
     </style>
 </head>

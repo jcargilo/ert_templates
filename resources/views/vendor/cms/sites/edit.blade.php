@@ -87,88 +87,73 @@
                             </div>
                         </div>
                         <div class="portlet-body">
-                            <div class="row mb-6 border-b border-gray-200 gap-6 pb-6">
-                                <div class="col-sm-8">
-                                    <div class="form-group">
-                                        <label for="title" class="control-label">Site Title:<span class="required"> * </span></label>
-                                        <div class="validate">{{ Form::text('title', NULL, array('class' => 'form-control', 'autofocus' => 'autofocus')) }}</div>
-                                    </div>
+                            <div class="form-group">
+                                <label for="title" class="control-label">Site Title:<span class="required"> * </span></label>
+                                <div class="validate">{{ Form::text('title', NULL, array('class' => 'form-control', 'autofocus' => 'autofocus')) }}</div>
+                            </div>
 
-                                    <div class="form-group">
-                                        <label for="domain" class="control-label">Domain:<span class="required"> * </span></label>
-                                        <div class="validate">{{ Form::text('domain', NULL, array('class' => 'form-control', 'placeholder' => 'http://www.mysite.com')) }}</div>
-                                    </div>
+                            <div class="form-group">
+                                <label for="domain" class="control-label">Domain:<span class="required"> * </span></label>
+                                <div class="validate">{{ Form::text('domain', NULL, array('class' => 'form-control', 'placeholder' => 'http://www.mysite.com')) }}</div>
+                            </div>
 
-                                    <div class="form-group">
-                                        <label for="attributes[biz_domain]" class="control-label">Biz-Diagnostic Domain:<span class="required"> * </span></label>
-                                        <div class="validate">{{ Form::text('attributes[biz_domain]', NULL, array('class' => 'form-control', 'placeholder' => 'https://mysite.biz-diagnostic.com')) }}</div>
-                                    </div>
+                            <div class="form-group">
+                                <label for="attributes[biz_domain]" class="control-label">Biz-Diagnostic Domain:<span class="required"> * </span></label>
+                                <div class="validate">{{ Form::text('attributes[biz_domain]', NULL, array('class' => 'form-control', 'placeholder' => 'https://mysite.biz-diagnostic.com')) }}</div>
+                            </div>
 
-                                    <div class="form-group">
-                                        <label for="attributes[events_api_link]" class="control-label">Elite Marketing Events API Link:<span class="required"> * </span></label>
-                                        <div class="validate">{{ Form::text('attributes[events_api_link]', NULL, array('class' => 'form-control', 'placeholder' => 'https://app.elitemarketingplatform.com/v1/events')) }}</div>
-                                    </div>
+                            <div class="form-group">
+                                <label for="attributes[events_api_link]" class="control-label">Elite Marketing Events API Link:<span class="required"> * </span></label>
+                                <div class="validate">{{ Form::text('attributes[events_api_link]', NULL, array('class' => 'form-control', 'placeholder' => 'https://app.elitemarketingplatform.com/v1/events')) }}</div>
+                            </div>
 
-                                    <div class="form-group">
-                                        <label for="email" class="control-label">Email Address(es):<span class="required"> * </span></label>
-                                        <div class="validate">{{ Form::text('email', NULL, array('class' => 'form-control', 'placeholder' => 'http://www.mysite.com')) }}</div>
-                                        <span class="text-info small"> To add multiple email addresses, separate each address with a comma. </span>
-                                    </div>
+                            <div class="form-group">
+                                <label for="email" class="control-label">Email Address(es):<span class="required"> * </span></label>
+                                <div class="validate">{{ Form::text('email', NULL, array('class' => 'form-control', 'placeholder' => 'http://www.mysite.com')) }}</div>
+                                <span class="text-info small"> To add multiple email addresses, separate each address with a comma. </span>
+                            </div>
 
-                                    <div class="mt-10 space-y-6">
-                                        <div class="flex items-center justify-between">
-                                            <label for="show_coming_soon">Show Coming Soon Page</label>
-                                            <div class="validate">
-                                                {{ Form::hidden('show_coming_soon', 0) }}
-                                                {{ Form::checkbox('show_coming_soon', 1, NULL, [
-                                                    'id' => 'show_coming_soon',
-                                                    'class' => 'make-switch',
-                                                    'data-on-text' => 'Yes',
-                                                    'data-on-color' => 'success',
-                                                    'data-off-text' => 'No',
-                                                    'data-size' => 'small'
-                                                    ]) }}
-                                            </div>
-                                        </div>
+                            <div class="form-group">
+                                <label for="meta_tags" class="control-label">Disclaimer / Footer Text (Site-wide):</label>
+                                <div class="validate">{{ Form::textarea('attributes[disclaimer]', NULL, ['class' => 'form-control', 'rows' => '4']) }}</div>
+                            </div>
 
-                                        <div class="flex items-center justify-between">
-                                            <div>
-                                                <label class="block mb-0" for="cache_data">Cache API Data for 1 hour</label>
-                                                <span class="text-info small">When enabled, the site will only refresh the API-fetched data once per hour.</span>
-                                            </div>
-                                            <div class="validate">
-                                                {{ Form::hidden('cache_data', 0) }}
-                                                {{ Form::checkbox('cache_data', 1, NULL, [
-                                                    'id' => 'cache_data',
-                                                    'class' => 'make-switch',
-                                                    'data-on-text' => 'Yes',
-                                                    'data-on-color' => 'success',
-                                                    'data-off-text' => 'No',
-                                                    'data-size' => 'small'
-                                                    ]) }}
-                                            </div>
-                                        </div>
+                            <div class="mt-10 space-y-6">
+                                <div class="flex items-center justify-between">
+                                    <label for="show_coming_soon">Show Coming Soon Page</label>
+                                    <div class="validate">
+                                        {{ Form::hidden('show_coming_soon', 0) }}
+                                        {{ Form::checkbox('show_coming_soon', 1, NULL, [
+                                            'id' => 'show_coming_soon',
+                                            'class' => 'make-switch',
+                                            'data-on-text' => 'Yes',
+                                            'data-on-color' => 'success',
+                                            'data-off-text' => 'No',
+                                            'data-size' => 'small'
+                                            ]) }}
                                     </div>
                                 </div>
 
-                                <div class="col-sm-4">
-                                    <div class="form-group">
-                                        <div class="mb-3 font-medium">Date Created</div>
-                                        <div class="well text-center bold small">
-                                            {!! $site->created_at->format('F j, Y') !!}
-                                            <span class="inline-block">{!! $site->created_at->format('g:i A') !!}</span>
-                                        </div>
-
-                                        <div class="mb-3 font-medium">Last Updated</div>
-                                        <div class="well text-center bold small">
-                                            {!! $site->updated_at->format('F j, Y') !!}
-                                            <span class="inline-block">{!! $site->updated_at->format('g:i A') !!}</span>
-                                        </div>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <label class="block mb-0" for="cache_data">Cache API Data for 1 hour</label>
+                                        <span class="text-info small">When enabled, the site will only refresh the API-fetched data once per hour.</span>
+                                    </div>
+                                    <div class="validate">
+                                        {{ Form::hidden('cache_data', 0) }}
+                                        {{ Form::checkbox('cache_data', 1, NULL, [
+                                            'id' => 'cache_data',
+                                            'class' => 'make-switch',
+                                            'data-on-text' => 'Yes',
+                                            'data-on-color' => 'success',
+                                            'data-off-text' => 'No',
+                                            'data-size' => 'small'
+                                            ]) }}
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="flex justify-end gap-3">
+                            <div class="flex justify-end gap-3 mt-8 border-t border-gray-200 pt-4">
                                 <a href="{{ route('sites.index') }}" class="btn btn-secondary-outline default" name="reset" value="reset">Cancel</a>
                                 <button class="btn btn-success" data-action="continue"><i class="fa fa-check"></i> Save Changes</button>
                             </div>

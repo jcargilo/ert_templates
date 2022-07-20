@@ -20,6 +20,17 @@ module.exports = {
       pattern: /font-(light|normal|semibold|bold|extrabold)/,
     },
     {
+      pattern: /text-link/,
+    },
+    {
+      pattern: /text-(hover)/,
+      variants: ['hover'],
+    },
+    {
+      pattern: /text-(active)/,
+      variants: ['active'],
+    },
+    {
       pattern: /button-(bg|text)/,
     },
     {

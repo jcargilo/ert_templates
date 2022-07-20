@@ -1,3 +1,5 @@
+@php view()->share('loadEditor', true); @endphp
+
 @extends('cms::master')
 
 @section('title')
@@ -114,8 +116,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="meta_tags" class="control-label">Disclaimer / Footer Text (Site-wide):</label>
-                                <div class="validate">{{ Form::textarea('attributes[disclaimer]', NULL, ['class' => 'form-control', 'rows' => '4']) }}</div>
+                                <label for="disclaimer" class="control-label">Disclaimer / Footer Text (Site-wide):</label>
+                                <div class="validate">{{ Form::textarea('attributes[disclaimer]', NULL, ['class' => 'form-control tinymce', 'rows' => '4']) }}</div>
                             </div>
 
                             <div class="mt-10 space-y-6">
@@ -611,6 +613,14 @@
 
     <script>
         $(function() {
+            @if ($currentSite->id > 1)
+                var crossDomain = true;
+                var fileManagerPath = "{!! $currentSite->domain !!}/vendor/takeoffdesigngroup/cms/assets/global/plugins/filemanager/";
+                initTinyMCE(crossDomain, fileManagerPath);
+            @else
+                initTinyMCE();
+            @endif
+
             FormValidation.init();
             FormValidation.site.validate();
             ComponentsColorPickers.init();

@@ -30,7 +30,7 @@
 
         @if ($site->attributes['disclaimer'] ?? false)
         <div class="mb-4 text-xs text-gray-600">
-            {{ $site->attributes['disclaimer'] }}
+            {!! $site->attributes['disclaimer'] !!}
         </div>
         @endif
 

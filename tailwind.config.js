@@ -46,7 +46,7 @@ module.exports = {
       variants: ['focus'],
     },
     {
-      pattern: /list-(disk|decimal|none|inside|outside)/,
+      pattern: /list-(disc|decimal|none|inside|outside)/,
       variants: ['hover'],
     },
     {

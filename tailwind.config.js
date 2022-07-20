@@ -47,7 +47,7 @@ module.exports = {
       variants: ['sm', 'lg', 'xl'],
     },
     {
-      pattern: /m(t|r|b|l|y)-(4|6|10|12|14|20|32)/,
+      pattern: /m(t|r|b|l|y)-(2|3|4|5|6|10|12|14|20|32)/,
       variants: ['sm', 'lg', 'xl'],
     },
     {
@@ -55,7 +55,7 @@ module.exports = {
       variants: ['sm', 'lg', 'xl'],
     },
     {
-      pattern: /p(t|r|b|l|y)-(4|6|10|12|14|20|24|32)/,
+      pattern: /p(t|r|b|l|y)-(2|3|4|5|6|10|12|14|20|24|32)/,
       variants: ['sm', 'md', 'lg', 'xl'],
     },
     {

@@ -46,6 +46,10 @@ module.exports = {
       variants: ['focus'],
     },
     {
+      pattern: /list-(disk|decimal|none|inside|outside)/,
+      variants: ['hover'],
+    },
+    {
       pattern: /flex-(20|25|33|40|50|60|66|75|80|100)/,
       variants: ['sm', 'lg', 'xl'],
     },

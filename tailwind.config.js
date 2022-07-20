@@ -54,7 +54,7 @@ module.exports = {
       variants: ['sm', 'lg', 'xl'],
     },
     {
-      pattern: /text-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl)/,
+      pattern: /text-(base|xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl)/,
       variants: ['sm', 'md', 'lg', 'xl'],
     },
     {

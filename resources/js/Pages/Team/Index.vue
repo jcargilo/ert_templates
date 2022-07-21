@@ -2,7 +2,14 @@
   <section>
     <div class="my-4 max-w-screen-xl space-y-12 text-center sm:px-4 lg:mx-auto xl:px-0">
       <div class="mx-auto max-w-5xl" v-if="team.length > 0">
-        <div class="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 lg:grid-cols-5">
+        <div class="grid grid-cols-2 mx-auto gap-4 sm:gap-6"
+          :class="{
+            'justify-center md:grid-cols-[186px]': team.length == 1,
+            'justify-center md:grid-cols-[repeat(2,_186px)]': team.length == 2,
+            'justify-center md:grid-cols-[repeat(4,_186px)]': team.length > 3,
+            'lg:grid-cols-[repeat(5,_186px)]': team.length > 4,
+          }"
+        >
           <template v-for="(member, index) in team">
             <Member :member="member" :key="index" @openBio="openBio" />
           </template>

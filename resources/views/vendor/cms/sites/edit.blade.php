@@ -116,6 +116,11 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="attributes[client_portal_link]" class="control-label">Client Portal URL:<span class="required"> * </span></label>
+                                <div class="validate">{{ Form::text('attributes[client_portal_link]', NULL, array('class' => 'form-control', 'placeholder' => 'https://myportallink.com')) }}</div>
+                            </div>
+
+                            <div class="form-group">
                                 <label for="disclaimer" class="control-label">Disclaimer / Footer Text (Site-wide):</label>
                                 <div class="validate">{{ Form::textarea('attributes[disclaimer]', NULL, ['class' => 'form-control tinymce', 'rows' => '4']) }}</div>
                             </div>

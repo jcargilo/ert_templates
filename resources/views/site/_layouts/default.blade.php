@@ -82,7 +82,7 @@
                 <div class="md:hidden">
                     <a
                         class="font-sans tracking-wider text-primary hover:text-primary decoration-2 hover:underline hover:underline-offset-8"
-                        href="#"
+                        href="{{ Arr::get($site->attributes, 'client_portal_link', '#') }}"
                     >
                         <span>Client Portal</span>
                     </a>

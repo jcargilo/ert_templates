@@ -1,9 +1,9 @@
 <nav class="flex flex-col justify-between ml-3 md:flex-1 xl:space-y-4">
 	<div class="hidden absolute top-0 right-2 md:flex md:justify-end xl:relative xl:right-0">
 		<a 
-			href="javascript:void"
 			class="button button-sm bg-button-bg text-button-text hover:bg-button-hover-bg hover:text-button-hover-text active:bg-button-active-bg active:text-button-active-text focus:ring-2 focus:ring-offset-2 focus:ring-button-ring"
-			{{-- target="_blank" --}}
+			href="{{ Arr::get($site->attributes, 'client_portal_link', '#') }}"
+            target="_blank"
 		>
 			Client Portal <i class="fas fa-external-link ml-2"></i>
 		</a>

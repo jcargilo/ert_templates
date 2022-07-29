@@ -83,6 +83,7 @@
                     <a
                         class="font-sans tracking-wider text-primary hover:text-primary decoration-2 hover:underline hover:underline-offset-8"
                         href="{{ Arr::get($site->attributes, 'client_portal_link', '#') }}"
+                        target="_blank"
                     >
                         <span>Client Portal</span>
                     </a>
